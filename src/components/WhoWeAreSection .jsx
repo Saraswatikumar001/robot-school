@@ -32,7 +32,7 @@ const WhoWeAreSection = () => {
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiMHCDMtqM_45FAek0yHA1bNk79rzvO1C1Pg&s"
                         alt="Founder"
-                        className="w-12 h-12 rounded-full"
+                        className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
                         <p className="font-semibold text-gray-900">John Doe</p>
@@ -46,7 +46,7 @@ const WhoWeAreSection = () => {
                 <img
                     src={kidsImage}
                     alt="Kids with Robot"
-                    className="rounded-full w-full h-full shadow-xl"
+                    className="rounded-full w-96 h-96 shadow-xl"
                 />
                 <div className="absolute top-0 right-0 bg-blue-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
