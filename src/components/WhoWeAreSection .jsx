@@ -5,12 +5,12 @@ const WhoWeAreSection = () => {
     return (
         <section className="flex flex-col md:flex-row items-center justify-between px-6 py-12 md:px-20 bg-white">
             {/* Left Content */}
-            <div className="md:w-1/2 mb-10 md:mb-0">
+            <div className="md:w-1/2 mb-10 md:mb-0 pe-5">
                 <p className="text-orange-500 font-semibold uppercase mb-2">Who We Are</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                     Empowering the Next Generation of Innovators.
                 </h2>
-                <div className=" flex flex-col text-gray-600 space-y-4 mb-8">
+                <div className="flex grid-cols-2 text-gray-600 space-y-4 mb-8">
                     <p>
                         we believe every child holds the potential to shape the future.
                         Through hands-on learning, creative thinking, and collaborative
