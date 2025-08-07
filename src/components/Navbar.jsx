@@ -8,7 +8,7 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <div className="flex items-center gap-3">
                     <img src={logo} alt="Robotics School Logo" className="h-12 w-12" />
-                    <span className="text-2xl font-bold text-[#04394e] bg-white py-1 px-6" style={{ borderRadius: '36px 0px 36px 0px' }}>RoboTics School</span>
+                    <span className="text-lg font-bold text-[#04394e] bg-white py-1 px-6" style={{ borderRadius: '34px 0px 34px 0px' }}>RoboTics School</span>
                 </div>
 
                 {/* Navigation Links */}
