@@ -4,6 +4,21 @@ import kidsImage from '../assets/img/robot-1.jpg';
 const WhoWeAreSection = () => {
     const [visible, setVisible] = useState(false);
 
+    const fullText = "Empowering the Next Generation of Innovators.";
+    const [typedText, setTypedText] = useState("");
+
+    useEffect(() => {
+        let index = 0;
+        const interval = setInterval(() => {
+            setTypedText((prev) => prev + fullText[index]);
+            index++;
+            if (index === fullText.length) clearInterval(interval);
+        }, 50); // typing speed in milliseconds
+
+        return () => clearInterval(interval);
+    }, []);
+
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             setVisible(true);
@@ -19,7 +34,6 @@ const WhoWeAreSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     Empowering the Next Generation of Innovators.
                 </h2>
-
                 {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
                     ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
