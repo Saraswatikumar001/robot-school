@@ -33,8 +33,9 @@ const WhoWeAreSection = () => {
             <div className="md:w-1/2 mb-10 md:mb-0 pe-25">
                 <p className="text-orange-500 font-semibold uppercase mb-2">Who We Are</p>
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
-                    {typedText}
+                    Empowering the Next Generation of Innovators.
                 </h2>
+
                 {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
                     ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
