@@ -20,7 +20,7 @@ const WhoWeAreSection = () => {
                 index++;
                 if (index === fullText.length) {
                     clearInterval(typingInterval);
-                    setTimeout(typeLoop, 2000); // wait before typing again
+                    setTimeout(typeLoop, 1000); // wait before typing again
                 }
                 return next;
             });
