@@ -64,7 +64,6 @@ const WhoWeAreSection = () => {
                    
                 </p>
 
-
                 {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
                     ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
