@@ -46,7 +46,7 @@ const WhoWeAreSection = () => {
                 <img
                     src={kidsImage}
                     alt="Kids with Robot"
-                    className="rounded-full shadow-xl"
+                    className="rounded-full w-full h-full shadow-xl"
                 />
                 <div className="absolute top-0 right-0 bg-blue-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
