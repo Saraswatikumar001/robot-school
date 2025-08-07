@@ -8,18 +8,42 @@ const WhoWeAreSection = () => {
     const [typedText, setTypedText] = useState("");
 
     useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-        if (index < fullText.length) {
-            setTypedText((prev) => prev + fullText[index]);
-            index++;
-        } else {
-            clearInterval(interval);
-        }
-    }, 50);
+        let index = 0;
+        let direction = 1; // 1 = typing, -1 = deleting
+        let interval;
 
-    return () => clearInterval(interval);
-}, []);
+        const startTyping = () => {
+            interval = setInterval(() => {
+                setTypedText((prev) => {
+                    if (direction === 1) {
+                        // Typing forward
+                        const next = prev + fullText[index];
+                        index++;
+                        if (index === fullText.length) {
+                            direction = -1;
+                            clearInterval(interval);
+                            setTimeout(startTyping, 2000); // wait before deleting
+                        }
+                        return next;
+                    } else {
+                        // Deleting
+                        const next = prev.slice(0, -1);
+                        if (next.length === 0) {
+                            direction = 1;
+                            index = 0;
+                            clearInterval(interval);
+                            setTimeout(startTyping, 1000); // wait before retyping
+                        }
+                        return next;
+                    }
+                });
+            }, 50);
+        };
+
+        startTyping();
+
+        return () => clearInterval(interval);
+    }, []);
 
 
 
@@ -37,8 +61,9 @@ const WhoWeAreSection = () => {
                 <p className="text-orange-500 font-semibold uppercase mb-2">Who We Are</p>
                 <h2 className="text-lg md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     {typedText}
-                    
+                    <span className="animate-pulse">|</span>
                 </h2>
+
 
                 {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
