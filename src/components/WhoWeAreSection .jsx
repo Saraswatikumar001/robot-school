@@ -1,5 +1,5 @@
 import React from 'react';
-import kidsImage from '../assets/kids-robot.jpg'; // update the path to your actual image
+import kidsImage from '../assets/img/father-son-making-robot'; 
 
 const WhoWeAreSection = () => {
     return (
