@@ -1,5 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import kidsImage from '../assets/img/robot-1.jpg';
+const fullText = "Empowering the Next Generation of Innovators.";
+const [typedText, setTypedText] = useState("");
+
+useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+        setTypedText((prev) => prev + fullText[index]);
+        index++;
+        if (index === fullText.length) {
+            clearInterval(interval);
+        }
+    }, 50);
+
+    return () => clearInterval(interval);
+}, []);
+
 
 const WhoWeAreSection = () => {
     const [visible, setVisible] = useState(false);
