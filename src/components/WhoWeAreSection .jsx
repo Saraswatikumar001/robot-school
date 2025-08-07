@@ -1,5 +1,5 @@
 import React from 'react';
-import kidsImage from '../assets/img/father-son-making-robot.jpg'; 
+import kidsImage from '../assets/img/robot-1.jpg';
 
 const WhoWeAreSection = () => {
     return (
