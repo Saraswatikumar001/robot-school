@@ -93,6 +93,9 @@ const WhoWeAreSection = () => {
                     alt="Kids with Robot"
                     className="rounded-full w-96 h-96 shadow-xl"
                 />
+                <div className='bg-white w-96 h-96 shadow-yellow-200 rounded-lg'>
+
+                </div>
                 <div className="absolute top-8 right-20 bg-orange-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
                     <p className="text-sm uppercase font-semibold tracking-wide">Member Active</p>
