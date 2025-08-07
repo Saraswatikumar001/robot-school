@@ -87,7 +87,7 @@ const WhoWeAreSection = () => {
             </div>
 
             {/* Right Content */}
-            <div className="relative md:w-1/2 ps-20">
+            <div className="relative md:w-1/2 ps-30">
                 <img
                     src={kidsImage}
                     alt="Kids with Robot"
