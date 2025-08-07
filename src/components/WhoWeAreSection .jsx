@@ -59,10 +59,10 @@ const WhoWeAreSection = () => {
             {/* Left Content */}
             <div className="md:w-1/2 mb-10 md:mb-0 pe-25">
                 <p className="text-orange-500 font-semibold uppercase mb-2">Who We Are</p>
-                <h2 className="text-lg md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
+                <p className="text-2xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     {typedText}
                    
-                </h2>
+                </p>
 
 
                 {/* 🎯 Animate this div */}
