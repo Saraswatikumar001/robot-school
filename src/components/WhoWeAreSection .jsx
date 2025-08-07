@@ -8,15 +8,19 @@ const WhoWeAreSection = () => {
     const [typedText, setTypedText] = useState("");
 
     useEffect(() => {
-        let index = 0;
-        const interval = setInterval(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+        if (index < fullText.length) {
             setTypedText((prev) => prev + fullText[index]);
             index++;
-            if (index === fullText.length) clearInterval(interval);
-        }, 50); // typing speed in milliseconds
+        } else {
+            clearInterval(interval);
+        }
+    }, 50);
 
-        return () => clearInterval(interval);
-    }, []);
+    return () => clearInterval(interval);
+}, []);
+
 
 
     useEffect(() => {
