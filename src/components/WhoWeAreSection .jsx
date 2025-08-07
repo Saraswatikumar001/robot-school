@@ -10,7 +10,7 @@ const WhoWeAreSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                     Empowering the Next Generation of Innovators.
                 </h2>
-                <div className="text-gray-600 space-y-4 mb-8">
+                <div className=" flex flex-col text-gray-600 space-y-4 mb-8">
                     <p>
                         we believe every child holds the potential to shape the future.
                         Through hands-on learning, creative thinking, and collaborative
@@ -30,12 +30,12 @@ const WhoWeAreSection = () => {
                 {/* Founder Info */}
                 <div className="flex items-center space-x-4 mt-4 border-t pt-4">
                     <img
-                        src="https://randomuser.me/api/portraits/men/32.jpg"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiMHCDMtqM_45FAek0yHA1bNk79rzvO1C1Pg&s"
                         alt="Founder"
                         className="w-12 h-12 rounded-full"
                     />
                     <div>
-                        <p className="font-semibold text-gray-900">Benjamin Mitchell</p>
+                        <p className="font-semibold text-gray-900">John Doe</p>
                         <p className="text-orange-500 font-bold text-sm uppercase">Founder</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const WhoWeAreSection = () => {
                 <img
                     src={kidsImage}
                     alt="Kids with Robot"
-                    className="rounded-xl shadow-xl"
+                    className="rounded-full shadow-xl"
                 />
                 <div className="absolute top-0 right-0 bg-blue-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
