@@ -33,7 +33,7 @@ const WhoWeAreSection = () => {
                 <p className="text-orange-500 font-semibold uppercase mb-2">Who We Are</p>
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     {typedText}
-                    <span className="animate-pulse"></span>
+                    
                 </h2>
 
                 {/* 🎯 Animate this div */}
