@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import kidsImage from '../assets/img/robot-1.jpg';
 
 const WhoWeAreSection = () => {
+    const [visible, setvisible] = React.useState(false);
+
+    useEffect(() => {
+        const Timeout = setTimeout(() => {
+            setvisible(true);
+        }, 200)
+        setvisible(true);
+        return () => clearTimeout(Timeout);
+    }, []);
+
     return (
         <section className="flex flex-col md:flex-row items-center justify-between px-6 py-12 md:px-20 bg-white">
             {/* Left Content */}
@@ -10,7 +20,9 @@ const WhoWeAreSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     Empowering the Next Generation of Innovators.
                 </h2>
-                <div className="flex grid-cols-2 text-gray-600 gap-8 mb-8">
+                <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
+                    ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
+                    flex flex-col md:flex-row`}>
                     <p>
                         we believe every child holds the potential to shape the future.
                         Through hands-on learning, creative thinking, and collaborative
@@ -42,13 +54,13 @@ const WhoWeAreSection = () => {
             </div>
 
             {/* Right Content */}
-            <div className="relative md:w-1/2">
+            <div className="relative md:w-1/2 ps-20">
                 <img
                     src={kidsImage}
                     alt="Kids with Robot"
                     className="rounded-full w-96 h-96 shadow-xl"
                 />
-                <div className="absolute top-0 right-0 bg-blue-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
+                <div className="absolute top-0 right-0 bg-orange-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
                     <p className="text-sm uppercase font-semibold tracking-wide">Member Active</p>
                 </div>
