@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import kidsImage from '../assets/img/robot-1.jpg';
 
 const WhoWeAreSection = () => {
-    const [visible, setvisible] = React.useState(false);
+    const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        const Timeout = setTimeout(() => {
-            setvisible(true);
-        }, 200)
-        setvisible(true);
-        return () => clearTimeout(Timeout);
+        const timeout = setTimeout(() => {
+            setVisible(true);
+        }, 200); // delay animation slightly
+        return () => clearTimeout(timeout);
     }, []);
 
     return (
@@ -20,11 +19,13 @@ const WhoWeAreSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     Empowering the Next Generation of Innovators.
                 </h2>
+
+                {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
                     ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
                     flex flex-col md:flex-row`}>
                     <p>
-                        we believe every child holds the potential to shape the future.
+                        We believe every child holds the potential to shape the future.
                         Through hands-on learning, creative thinking, and collaborative
                         problem-solving, we empower kids to engineer their dreams and bring
                         ideas to life with robotics.
