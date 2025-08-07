@@ -7,43 +7,31 @@ const WhoWeAreSection = () => {
     const fullText = "Empowering the Next Generation of Innovators.";
     const [typedText, setTypedText] = useState("");
 
-    useEffect(() => {
-        let index = 0;
-        let direction = 1; // 1 = typing, -1 = deleting
-        let interval;
+   useEffect(() => {
+    let index = 0;
 
-        const startTyping = () => {
-            interval = setInterval(() => {
-                setTypedText((prev) => {
-                    if (direction === 1) {
-                        // Typing forward
-                        const next = prev + fullText[index];
-                        index++;
-                        if (index === fullText.length) {
-                            direction = -1;
-                            clearInterval(interval);
-                            setTimeout(startTyping, 2000); // wait before deleting
-                        }
-                        return next;
-                    } else {
-                        // Deleting
-                        const next = prev.slice(0, -1);
-                        if (next.length === 0) {
-                            direction = 1;
-                            index = 0;
-                            clearInterval(interval);
-                            setTimeout(startTyping, 1000); // wait before retyping
-                        }
-                        return next;
-                    }
-                });
-            }, 50);
-        };
+    const typeLoop = () => {
+        setTypedText(''); // Clear text before each new cycle
+        index = 0;
 
-        startTyping();
+        const typingInterval = setInterval(() => {
+            setTypedText((prev) => {
+                const next = prev + fullText[index];
+                index++;
+                if (index === fullText.length) {
+                    clearInterval(typingInterval);
+                    setTimeout(typeLoop, 2000); // wait before typing again
+                }
+                return next;
+            });
+        }, 50);
+    };
 
-        return () => clearInterval(interval);
-    }, []);
+    typeLoop();
+
+    return () => clearInterval(); // Cleanup
+}, []);
+
 
 
 
