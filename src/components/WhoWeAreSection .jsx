@@ -35,8 +35,6 @@ const WhoWeAreSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold bg-[#04394e] p-3 rounded-lg text-white leading-tight mb-6">
                     {typedText}
                 </h2>
-
-
                 {/* 🎯 Animate this div */}
                 <div className={`text-gray-600 gap-8 mb-8 transition-all duration-1000 ease-in-out
                     ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
