@@ -95,7 +95,7 @@ const WhoWeAreSection = () => {
                 />                
                 <div className="border-4 border-b-white absolute top-8 right-20 bg-orange-500 text-white rounded-full px-6 py-4 text-center transform translate-x-1/3 -translate-y-1/3 shadow-md">
                     <p className="text-3xl font-bold">47K+</p>
-                    <p className="text-sm uppercase font-semibold tracking-wide">Member Active</p>
+                    <p className="text-sm uppercase font-semibold tracking-wide">Member</p>
                 </div>
             </div>
         </section>
