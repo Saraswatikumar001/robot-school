@@ -39,8 +39,8 @@ const ServicesSection = () => {
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-500 text-sm mb-4">{service.description}</p>
               <button className="bg-[#f66b08] hover:bg-orange-600 text-white border-6 border-white  font-semibold px-6 py-2 rounded-full shadow-md transition-all duration-300">
-                    LEARN MORE
-                </button>
+                LEARN MORE
+              </button>
             </div>
           ))}
         </div>
