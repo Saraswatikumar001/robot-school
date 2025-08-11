@@ -6,6 +6,9 @@ import RoboticsSection from './components/RoboticsSection '
 import ServicesSection from './components/ServicesSection'
 import WhoWeAreSection from './components/WhoWeAreSection '
 import FeaturesSection from './components/FeaturesSection'
+import ProgramOffering from './components/ProgramOffering '
+import TestimonialSection from './components/TestimonialSection;'
+import FeaturedCourses from './components/FeaturedCourses'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +21,9 @@ function App() {
        <ServicesSection />
        <WhoWeAreSection />
        <FeaturesSection />
+       <ProgramOffering />
+       <TestimonialSection />
+       <FeaturedCourses />
     </>
   )
 }
