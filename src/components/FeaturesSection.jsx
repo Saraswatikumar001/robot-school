@@ -1,5 +1,5 @@
 import React from "react";
-import girlJumping from "../assets/img/girl.png";
+import girlJumping from "../assets/img/girl-jump.png";
 import boyWithRobot from "../assets/img/fun.jpg";
 import kidsWithRobot from "../assets/img/robot-1.jpg";
 import groupKids from "../assets/img/robot.jpg";

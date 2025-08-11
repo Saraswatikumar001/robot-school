@@ -9,6 +9,7 @@ import FeaturesSection from './components/FeaturesSection'
 import ProgramOffering from './components/ProgramOffering '
 import TestimonialSection from './components/TestimonialSection;'
 import FeaturedCourses from './components/FeaturedCourses'
+import HeroSection from './components/HeroSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
        <ProgramOffering />
        <TestimonialSection />
        <FeaturedCourses />
+       <HeroSection />
     </>
   )
 }
