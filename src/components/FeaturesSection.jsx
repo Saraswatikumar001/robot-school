@@ -1,33 +1,46 @@
 import React from "react";
-import girlJumping from "../assets/img/girl-jump.png";
-import boyWithRobot from "../assets/img/fun.jpg";
-import kidsWithRobot from "../assets/img/robot-1.jpg";
-import groupKids from "../assets/img/robot.jpg";
+import { motion } from "framer-motion";
+import girlJumping from "../assets/img/img.png";
+import boyWithRobot from "../assets/img/img1.png";
+import kidsWithRobot from "../assets/img/img3.png";
+import groupKids from "../assets/img/img4.png";
 
 const features = [
   {
     title: "Personal & Group Classes",
     image: girlJumping,
-    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",
-    animation: "animate-bounce-slow",
+    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",    
+    animation: {
+      animate: { y: [0, -20, 0] },
+      transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+    }
   },
   {
     title: "Learn with STEM kits",
     image: boyWithRobot,
-    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",
-    animation: "animate-float",
+    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",   
+    animation: {
+      animate: { rotate: [0, 5, -5, 0] },
+      transition: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+    }
   },
   {
     title: "Flexible Class timing",
     image: kidsWithRobot,
-    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",
-    animation: "animate-wiggle",
+    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",    
+    animation: {
+      animate: { scale: [1, 1.1, 1] },
+      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+    }
   },
   {
     title: "Have fun while learning",
     image: groupKids,
-    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",
-    animation: "animate-jump",
+    desc: "Pellentesque per porttitor montes sollicitudin ante condimentum pede nulla laoreet",    
+    animation: {
+      animate: { x: [0, 15, -15, 0] },
+      transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" }
+    }
   },
 ];
 
@@ -40,7 +53,10 @@ const FeaturesSection = () => {
             <img
               src={feature.image}
               alt={feature.title}
-              className={`mx-auto h-40 mb-4 ${feature.animation}`}
+              className="mx-auto h-40 mb-4"
+              initial={{ opacity: 0 }}
+              animate={feature.animation.animate}
+              transition={feature.animation.transition}
             />
             <h3 className="text-xl font-bold text-blue-700">
               {feature.title}

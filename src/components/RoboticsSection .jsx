@@ -1,35 +1,85 @@
 import React from 'react';
 import { FaPlay, FaCheckCircle } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import robot from '../assets/img/robot.jpg';
 
 const RoboticsSection = () => {
     return (
         <section className="flex flex-col items-center gap-10 px-6 py-12 bg-white md:px-16 md:flex-row">
+
             {/* Left: Image with Play Button */}
-            <div className="relative w-full h-full p-4 bg-white md:w-1/2 rounded-3xl me-5">
-                <img
+            <motion.div
+                className="relative w-full h-full p-4 bg-white md:w-1/2 rounded-3xl me-5"
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 120, damping: 8 }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
+                <motion.img
                     src={robot}
                     alt="Kids working on robotics"
                     className="object-cover w-full rounded-2xl"
+                    animate={{
+                        y: [0, -15, 0],
+                        rotate: [0, 5, -5, 0],
+                        scale: [1, 1.05, 1]
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
                 />
-                <a className="absolute left-[89%] top-[40%]  flex items-center justify-center">
-                    <div className="border-white rounded-full shadow-lg bg-gradient-to-r from-orange-500 to-orange-700 p-9 border-6 animate-pulse">
+
+                {/* Animated Play Button */}
+                <motion.a
+                    className="absolute left-[89%] top-[40%] flex items-center justify-center"
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <div className="border-white rounded-full shadow-lg bg-gradient-to-r from-orange-400 to-pink-500 p-9 border-6">
                         <FaPlay className="text-xl text-white" />
                     </div>
-                </a>
-            </div>
+                </motion.a>
+            </motion.div>
 
             {/* Right: Content */}
-            <div className="w-full md:w-1/2">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#04394e] leading-tight mb-4">
-                     Lorem ipsum dolor sit amet, <br /> consectetur adipisicing <br /> Innovators.
-                </h2>
-                <p className="mb-6 text-gray-600">
+            <motion.div
+                className="w-full md:w-1/2"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 100, damping: 10 }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold text-[#04394e] leading-tight mb-4"
+                    initial={{ scale: 0.5 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 8 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    Lorem ipsum dolor sit amet, <br /> consectetur adipisicing <br /> Innovators.
+                </motion.h2>
+
+                <motion.p
+                    className="mb-6 text-gray-600"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3, type: "spring" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Dolorum, alias! Perferendis eos illo debitis nisi repellat,
                     magni necessitatibus fuga quod nesciunt ea, obcaecati quasi eius
                     excepturi laudantium! Corrupti nemo, aspernatur in atque adipisci deleniti, dolorem odio quibusdam natus nostrum nihil?
-                </p>
+                </motion.p>
 
                 <ul className="mb-6 space-y-3 text-gray-700">
                     {[
@@ -39,17 +89,34 @@ const RoboticsSection = () => {
                         'Convallis in neque primis',
                         'Natoque nulla dictum pretium',
                     ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
+                        <motion.li
+                            key={idx}
+                            className="flex items-start gap-2"
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                delay: idx * 0.15 + 0.5,
+                                type: "spring",
+                                stiffness: 150,
+                                damping: 8
+                            }}
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
                             <FaCheckCircle className="mt-1 text-green-500" />
                             {item}
-                        </li>
+                        </motion.li>
                     ))}
                 </ul>
 
-                <button className="bg-[#f66b08] hover:bg-orange-600 text-white border-6 border-white  font-semibold px-6 py-2 rounded-full shadow-md transition-all duration-300">
+                <motion.button
+                    className="bg-[#f66b08] hover:bg-orange-600 text-white border-6 border-white font-semibold px-6 py-2 rounded-full shadow-md"
+                    whileHover={{ rotate: [0, -5, 5, 0], scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 5 }}
+                >
                     LEARN MORE
-                </button>
-            </div>
+                </motion.button>
+            </motion.div>
         </section>
     );
 };
