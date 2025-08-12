@@ -11,23 +11,25 @@ import TestimonialSection from './components/TestimonialSection;'
 import FeaturedCourses from './components/FeaturedCourses'
 import HeroSection from './components/HeroSection'
 import FAQContactSection from './components/FAQContactSection'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-       <Navbar /> 
-       <About />  
-       <RoboticsSection />
-       <ServicesSection />
-       <WhoWeAreSection />
-       <FeaturesSection />
-       <ProgramOffering />
-       <TestimonialSection />
-       <FeaturedCourses />
-       <HeroSection />
-       <FAQContactSection />
+      <Navbar />
+      <About />
+      <RoboticsSection />
+      <ServicesSection />
+      <WhoWeAreSection />
+      <FeaturesSection />
+      <ProgramOffering />
+      <TestimonialSection />
+      <FeaturedCourses />
+      <HeroSection />
+      <FAQContactSection />
+      <Footer />
     </>
   )
 }
