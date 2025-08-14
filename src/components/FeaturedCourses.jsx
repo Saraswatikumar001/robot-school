@@ -7,7 +7,7 @@ const courses = [
         category: "BASIC ROBOTICS",
         title: "Robotics 101: Building a Foundation for Young Innovators",
         rating: 4.5,
-        price: "$99",
+        price: "₹99",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     },
@@ -16,7 +16,7 @@ const courses = [
         category: "BASIC ROBOTICS",
         title: "Robotics 101: Building a Foundation for Young Innovators",
         rating: 4.5,
-        price: "$99",
+        price: "₹99",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     },
@@ -25,7 +25,7 @@ const courses = [
         category: "BASIC ROBOTICS",
         title: "Robotics 101: Building a Foundation for Young Innovators",
         rating: 4.5,
-        price: "$99",
+        price: "₹99",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     },
@@ -34,7 +34,7 @@ const courses = [
         category: "BASIC ROBOTICS",
         title: "Robotics 101: Building a Foundation for Young Innovators",
         rating: 4.5,
-        price: "$99",
+        price: "₹99",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     },
@@ -52,7 +52,7 @@ const FeaturedCourses = () => {
                             className="bg-white rounded-lg shadow-lg overflow-hidden relative"
                         >
                             {/* Price Tag */}
-                            <div className="absolute left-[-1%] top-[33%] bg-[#2727ef] hover:bg-[#2727eff3] text-white  border-4 border-white font-bold px-3 py-1 rounded-full">
+                            <div className="absolute left-[-1%] top-[33%] bg-[#04394e] text-white  border-4 border-white font-bold px-3 py-1 rounded-full">
                                 {course.price}
                             </div>
 

@@ -32,7 +32,7 @@ export default function Footer() {
                     >
                         <path
                             d="M0,0V46.29c47.35,22.24,104.71,29,158,17.39C230.06,51,284.21,25.1,339,17.2c54.64-7.88,108.79,1.89,163,9.77,58.26,8.46,115.64,13.72,173,2.64,57.28-11.06,113.77-35.65,171-41.57,55.12-5.68,110.23,7.48,165,20.48V0Z"
-                            fill="#edc039"
+                            fill="#fa8b41"
                         ></path>
                     </svg>
                 </div>
@@ -43,13 +43,13 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-10 pt-5">
                         {/* Social Icons */}
                         <div className="flex justify-center md:justify-start gap-4 text-2xl">
-                            <a href="#" className="hover:text-yellow-400">
+                            <a href="#" className="hover:text-[#fa8b41]">
                                 <FaFacebookF />
                             </a>
-                            <a href="#" className="hover:text-yellow-400">
+                            <a href="#" className="hover:text-[#fa8b41]">
                                 <FaInstagram />
                             </a>
-                            <a href="#" className="hover:text-yellow-400">
+                            <a href="#" className="hover:text-[#fa8b41]">
                                 <FaYoutube />
                             </a>
                         </div>
@@ -57,19 +57,19 @@ export default function Footer() {
                         {/* Phone */}
                         <div>
                             <p className="font-bold">Phone Number.</p>
-                            <a href="tel:+91 (933) 093 99 27" className="text-yellow-300">+91 (933) 093 99 27</a>
+                            <a href="tel:+91 (933) 093 99 27" className="text-[#fa8b41]">+91 (933) 093 99 27</a>
                         </div>
 
                         {/* Email */}
                         <div>
                             <p className="font-bold">Email Address</p>
-                            <a href="mailto:ceo@fusiontechlab.com" className="text-yellow-300">ceo@fusiontechlab.com</a>
+                            <a href="mailto:ceo@fusiontechlab.com" className="text-[#fa8b41]">ceo@fusiontechlab.com</a>
                         </div>
 
                         {/* Address */}
                         <div>
                             <p className="font-bold">Our Address</p>
-                            <p className="text-yellow-300">
+                            <p className="text-[#fa8b41]">
                                 201-05 50th Ave, Flushing, NY
                             </p>
                         </div>
@@ -95,7 +95,7 @@ export default function Footer() {
                         <div>
                             <p className="font-bold relative">
                                 Navigation.
-                                <span className="block w-8 h-1 bg-yellow-400 mt-1"></span>
+                                <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <ul className="mt-3 space-y-1 text-blue-100">
                                 <li><a href="#">Home</a></li>
@@ -109,7 +109,7 @@ export default function Footer() {
                         <div>
                             <p className="font-bold relative">
                                 Quick Links.
-                                <span className="block w-8 h-1 bg-yellow-400 mt-1"></span>
+                                <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <ul className="mt-3 space-y-1 text-blue-100">
                                 <li><a href="#">Pricing</a></li>
@@ -123,7 +123,7 @@ export default function Footer() {
                         <div>
                             <p className="font-bold relative">
                                 Subscribe.
-                                <span className="block w-8 h-1 bg-yellow-400 mt-1"></span>
+                                <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <div className="mt-3 flex flex-col gap-3">
                                 <input
@@ -131,7 +131,7 @@ export default function Footer() {
                                     placeholder="Email*"
                                     className="px-3 py-2 rounded bg-white text-black placeholder-blue-400 focus:outline-none"
                                 />
-                                <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 rounded">
+                                <button className="bg-[#fa8b41] hover:bg-[#fa8b41] text-blue-900 font-bold py-2 rounded">
                                     Subscribe
                                 </button>
                             </div>
@@ -142,8 +142,8 @@ export default function Footer() {
 
                     {/* Footer Bottom */}
                     <div className="flex flex-col md:flex-row justify-between text-sm text-blue-100 text-center md:text-left">
-                        <p>© Created by</p>
-                        <p>All rights Reserved</p>
+                        <p></p>
+                        <p></p>
                     </div>
                 </div>
             </div>

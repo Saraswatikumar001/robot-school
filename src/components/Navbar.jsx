@@ -1,42 +1,137 @@
-import React from 'react';
-import logo from '../assets/img/roboticslogo.png'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import logo from "../assets/img/roboticslogo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return (
-        <nav className="bg-[#04394e] text-white shadow-sm py-4 px-6">
-            <div className="container mx-auto flex justify-between items-center">
-                {/* Logo Section */}
-                <div className="flex items-center gap-3">
-                    <img src={logo} alt="Robotics School Logo" className="h-12 w-12" />
-                    <span className="text-lg font-bold text-[#04394e] bg-white py-1 px-6" style={{ borderRadius: '34px 0px 34px 0px' }}>RoboTics School</span>
-                </div>
+  const [isOpen, setIsOpen] = useState(false);
 
-                {/* Navigation Links */}
-                <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
-                    <li><a href="#" className="hover:text-orange-600 text-white">Home</a></li>
-                    <li><a href="#" className="hover:text-orange-600 text-white">About Us</a></li>
-                    <li><a href="#" className="hover:text-orange-600 text-white">Courses</a></li>
-                    <li><a href="#" className="hover:text-orange-600 text-white">Testimonials</a></li>
-                    <li><a href="#" className="hover:text-orange-600 text-white">Contact Us</a></li>
-                </ul>
+  const navLinks = [
+    { name: "Home", to: "/" },
+    { name: "About Us", to: "/about" },
+    { name: "Case Study", to: "/casestudy" },
+    { name: "Testimonials", to: "/testimonials" },
+    { name: "Contact Us", to: "/contact" },
+  ];
 
-                {/* Mobile Menu Button (optional future) */}
-                <div className="md:hidden">
-                    <button className="text-orange-600">
-                        {/* You can add a menu icon here */}
-                        ☰
-                    </button>
-                </div>
+  return (
+    <nav className="bg-[#04394e] text-white shadow-xl py-4 px-6 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <motion.div
+          className="flex items-center gap-3"
+          animate={{ y: [0, -5, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <img
+            src={logo}
+            alt="Robotics School Logo"
+            className="h-16 w-16 rounded-full border-4 border-[#fa8b41] shadow-lg"
+          />
+        </motion.div>
 
-                <div>
-                    <a className="bg-orange-400 hover:bg-orange-600 text-white py-2 px-4 rounded font-semibold">
-                        Enroll Now
-                    </a>
-                </div>
-            </div>
-        </nav>
-    );
+        {/* Desktop Links */}
+        <ul className="hidden md:flex space-x-8 font-medium">
+          {navLinks.map((link, index) => (
+            <motion.li
+              key={index}
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Link
+                to={link.to}
+                className="relative text-white hover:text-[#fa8b41] transition-colors duration-300"
+              >
+                {link.name}
+                <span className="absolute left-0 -bottom-1 w-0 h-1 bg-[#fa8b41] transition-all duration-300 hover:w-full rounded-full"></span>
+              </Link>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* Enroll Now Button (Desktop) */}
+        <motion.a
+          href="#"
+          className="hidden md:inline-block bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold shadow-lg border-2 border-transparent hover:border-white"
+          animate={{
+            scale: [1, 1.05, 1],
+            opacity: [1, 0.85, 1],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          whileHover={{
+            scale: 1.15,
+            boxShadow: "0px 0px 15px rgba(250,139,65,0.8)",
+          }}
+        >
+          Enroll Now
+        </motion.a>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-[#fa8b41] text-3xl hover:scale-110 transition-transform duration-300"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-[#04394e] mt-4 rounded-lg shadow-lg"
+        >
+          <ul className="flex flex-col items-center gap-4 py-4">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-white hover:text-[#fa8b41] transition-colors duration-300 text-lg"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <motion.a
+                href="#"
+                onClick={() => setIsOpen(false)}
+                className="bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold shadow-lg border-2 border-transparent hover:border-white"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [1, 0.85, 1],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                whileHover={{
+                  scale: 1.15,
+                  boxShadow: "0px 0px 15px rgba(250,139,65,0.8)",
+                }}
+              >
+                Enroll Now
+              </motion.a>
+            </li>
+          </ul>
+        </motion.div>
+      )}
+    </nav>
+  );
 };
 
-
-export default Navbar
+export default Navbar;

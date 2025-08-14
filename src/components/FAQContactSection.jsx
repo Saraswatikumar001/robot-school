@@ -27,7 +27,7 @@ const FAQContactSection = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <div className="max-w-7xl mx-auto px-10 py-12 grid md:grid-cols-2 gap-8 bg-amber-50 my-10">
+        <div className="max-w-7xl mx-auto px-10 py-12 grid md:grid-cols-2 gap-8 bg-[#fff2eb] my-10">
             {/* FAQ Section */}
             <div>
                 <p className="text-lg font-bold text-yellow-600 uppercase">FAQ</p>

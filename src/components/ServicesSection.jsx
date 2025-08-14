@@ -3,7 +3,7 @@ import { FaFlask, FaVideo, FaCampground } from 'react-icons/fa';
 
 const services = [
   {
-    icon: <FaFlask className="text-3xl text-green-500" />,
+    icon: <FaFlask className="text-3xl text-[#04394e]" />,
     title: 'Classes',
     description:
       'Urna pellentesque faucibus lorem justo non vel efficitur sapien bibendum imperdiet tempor.',
@@ -50,19 +50,30 @@ const ServicesSection = () => {
           <h4 className="text-white text-lg md:text-xl font-semibold mb-6">
             Trusted by 30,000 world-class brands and organizations of all sizes.
           </h4>
-          <div className="flex flex-wrap justify-center items-center gap-6 text-white opacity-80">
-            {Array(10)
-              .fill('Logoipsum')
-              .map((logo, i) => (
-                <span
-                  key={i}
-                  className="text-sm md:text-base font-semibold tracking-wide"
-                >
-                  {logo}
-                </span>
-              ))}
+
+          <div className="flex flex-wrap justify-center items-center gap-6 opacity-80">
+            {[
+              "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png",
+              "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_2015_logo.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/0/02/HP_logo_2012.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/0/0d/YouTube_full-color_icon_%282017%29.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/0/09/Adobe_Corporate_logo.svg",
+              "https://upload.wikimedia.org/wikipedia/commons/2/2f/Spotify_logo_with_text.svg"
+            ].map((logo, i) => (
+              <img
+                key={i}
+                src={logo}
+                alt={`Brand Logo ${i + 1}`}
+                className="h-8 md:h-10 object-contain"
+              />
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );

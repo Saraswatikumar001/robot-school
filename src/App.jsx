@@ -1,35 +1,30 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Navbar from './components/Navbar'
-import About from './components/About'
-import RoboticsSection from './components/RoboticsSection '
-import ServicesSection from './components/ServicesSection'
-import WhoWeAreSection from './components/WhoWeAreSection '
-import FeaturesSection from './components/FeaturesSection'
-import ProgramOffering from './components/ProgramOffering '
-import TestimonialSection from './components/TestimonialSection;'
-import FeaturedCourses from './components/FeaturedCourses'
-import HeroSection from './components/HeroSection'
-import FAQContactSection from './components/FAQContactSection'
-import Footer from './components/Footer'
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import AboutPage from "./pages/AboutPage";
+import CaseStudy from "./pages/CaseStudy";
+import Testimonials from "./pages/Testimonials ";
+import ContactPage from "./pages/ContactPage";
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navbar />
-      <About />
-      <RoboticsSection />
-      <ServicesSection />
-      <WhoWeAreSection />
-      <FeaturesSection />
-      <ProgramOffering />
-      <TestimonialSection />
-      <FeaturedCourses />
-      <HeroSection />
-      <FAQContactSection />
-      <Footer />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/casestudy" element={<CaseStudy />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </Router>
+
     </>
   )
 }
