@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { section } from "framer-motion/client";
 
 const testimonials = [
   {
@@ -30,88 +29,91 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <>
-      <section>
-        <div className="py-10 rounded shadow-lg">
-          <motion.h1
-            className="text-center text-5xl md:text-6xl font-bold text-orange-500 drop-shadow-lg"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-              delay: 0.2,
-            }}
-            whileHover={{
-              scale: 1.05,
-              textShadow: "0px 0px 15px rgba(255,255,255,0.8)",
-            }}
-          >
-            Testimonials
-          </motion.h1>
-        </div>
+      {/* Heading Section */}
+      <section className="py-12 bg-gradient-to-r from-[#fce8dc] via-[#fcccae] to-[#fce8dc]">
+        <motion.h1
+          className="text-center text-5xl md:text-6xl font-extrabold drop-shadow-xl bg-gradient-to-r from-[#fa8b41] via-[#ff6f3c] to-[#c75218] bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          whileHover={{
+            scale: 1.05,
+            textShadow: "0px 0px 25px rgba(255,255,255,0.9)",
+          }}
+        >
+          Testimonials
+        </motion.h1>
       </section>
-      <section className="py-16 bg-gradient-to-b from-[#fce8dc] to-[#fcccae] text-white">
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gradient-to-b from-[#fff7f3] to-[#fde7d6]">
         <div className="container mx-auto px-6">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 text-[#04394e] text-sm font-semibold">
-            <Link to="/" className="hover:underline">
+            <Link to="/" className="cursor-pointer">
               Home
             </Link>
-            <span className="text-[#ffbe93]">/</span>
+            <span className="text-[#5d5c5b]">/</span>
             <span className="text-[#fa8b41]">Testimonials</span>
           </div>
 
-          {/* Animated Heading */}
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#04394e]"
-            initial={{ opacity: 0, y: -40, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+          {/* Section Subtitle */}
+          <motion.p
+            className="text-center text-lg text-[#313338] max-w-2xl font-semibold mx-auto mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            <motion.span
-              initial={{ color: "#04394e" }}
-              animate={{ color: "#fa8b41" }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
-            >
-              What Our Students & Parents Say
-            </motion.span>
-          </motion.h2>
+            Here’s what our amazing students and supportive parents have to say
+            about their journey with us.
+          </motion.p>
 
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {testimonials.map((t, index) => (
               <motion.div
                 key={index}
-                className="bg-white text-[#04394e] p-6 rounded-2xl shadow-xl relative overflow-hidden hover:shadow-2xl transition duration-300"
-                initial={{ opacity: 0, y: 50 }}
+                className="bg-white rounded-3xl p-8 shadow-lg relative group overflow-hidden"
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ scale: 1.03 }}
               >
-                {/* Decorative Bubble */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#c75218] rounded-full opacity-40"></div>
+                {/* Top Accent */}
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#fa8b41] to-[#c75218]" />
 
-                {/* Image */}
-                <img
+                {/* Profile Image */}
+                <motion.img
                   src={t.image}
                   alt={t.name}
-                  className="w-20 h-20 rounded-full mx-auto border-4 border-[#fa8b41] mb-4"
+                  className="w-20 h-20 rounded-full border-4 border-[#fa8b41] shadow-md mx-auto mb-6"
+                  whileHover={{ rotate: 5 }}
+                  transition={{ duration: 0.3 }}
                 />
 
                 {/* Feedback */}
-                <p className="italic mb-4">"{t.feedback}"</p>
+                <p className="text-gray-600 italic text-center mb-6 leading-relaxed">
+                  "{t.feedback}"
+                </p>
 
                 {/* Name & Role */}
-                <h3 className="font-bold text-lg">{t.name}</h3>
-                <span className="text-sm text-gray-500">{t.role}</span>
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-[#04394e]">
+                    {t.name}
+                  </h3>
+                  <span className="text-sm text-[#fa8b41] font-medium">
+                    {t.role}
+                  </span>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#fa8b41]/10 to-[#c75218]/10 opacity-0 group-hover:opacity-100 transition duration-300" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
     </>
-
-
   );
 };
 

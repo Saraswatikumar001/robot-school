@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/img/roboticslogo.png";
 import { Link } from "react-router-dom";
+
 import { FaHome, FaBook, FaComments, FaEnvelope, FaProjectDiagram } from "react-icons/fa";
 
 const Navbar = () => {
