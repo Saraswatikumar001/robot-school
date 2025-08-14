@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/img/roboticslogo.png";
 import { Link } from "react-router-dom";
+import { FaHome, FaBook, FaComments, FaEnvelope, FaProjectDiagram } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", to: "/" },
-    { name: "About Us", to: "/about" },
-    { name: "Case Study", to: "/casestudy" },
-    { name: "Testimonials", to: "/testimonials" },
-    { name: "Contact Us", to: "/contact" },
+    { name: "Home", to: "/", icon: <FaHome className="inline-block mr-2" /> },
+    { name: "About Us", to: "/about", icon: <FaBook className="inline-block mr-2" /> },
+    { name: "Case Study", to: "/casestudy", icon: <FaProjectDiagram className="inline-block mr-2" /> },
+    { name: "Testimonials", to: "/testimonials", icon: <FaComments className="inline-block mr-2" /> },
+    { name: "Contact Us", to: "/contact", icon: <FaEnvelope className="inline-block mr-2" /> },
   ];
 
   return (
@@ -44,9 +45,9 @@ const Navbar = () => {
             >
               <Link
                 to={link.to}
-                className="relative text-white hover:text-[#fa8b41] transition-colors duration-300"
+                className="relative flex items-center text-white hover:text-[#fa8b41] transition-colors duration-300"
               >
-                {link.name}
+                {link.icon} {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-1 bg-[#fa8b41] transition-all duration-300 hover:w-full rounded-full"></span>
               </Link>
             </motion.li>
@@ -99,9 +100,9 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className="block text-white hover:text-[#fa8b41] transition-colors duration-300 text-lg"
+                  className="block flex items-center text-white hover:text-[#fa8b41] transition-colors duration-300 text-lg"
                 >
-                  {link.name}
+                  {link.icon} {link.name}
                 </Link>
               </li>
             ))}

@@ -53,11 +53,11 @@ const ServicesSection = () => {
 
           <div className="flex flex-wrap justify-center items-center gap-6 opacity-80">
             {[
-              "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png",
-              "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-              "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-              "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-              "https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_2015_logo.svg",
+              "https://static.vecteezy.com/system/resources/previews/004/348/833/non_2x/abstract-robotics-logo-kids-development-center-sign-template-child-learning-center-vector.jpg",
+              "https://static.vecteezy.com/system/resources/previews/049/079/999/non_2x/robotics-innovation-a-friendly-robot-mascot-symbolizing-advanced-technology-and-automation-in-a-modern-world-vector.jpg",
+              "https://static.vecteezy.com/system/resources/previews/049/079/999/non_2x/robotics-innovation-a-friendly-robot-mascot-symbolizing-advanced-technology-and-automation-in-a-modern-world-vector.jpg",
+              "https://static.vecteezy.com/system/resources/previews/049/079/999/non_2x/robotics-innovation-a-friendly-robot-mascot-symbolizing-advanced-technology-and-automation-in-a-modern-world-vector.jpg",
+              "https://static.vecteezy.com/system/resources/previews/049/079/999/non_2x/robotics-innovation-a-friendly-robot-mascot-symbolizing-advanced-technology-and-automation-in-a-modern-world-vector.jpg",
               "https://upload.wikimedia.org/wikipedia/commons/0/02/HP_logo_2012.svg",
               "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
               "https://upload.wikimedia.org/wikipedia/commons/0/0d/YouTube_full-color_icon_%282017%29.svg",

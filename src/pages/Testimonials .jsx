@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -28,15 +29,31 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-[#fce8dc] to-[#fcccae] text-white">
-      <div className="container mx-auto px-6 text-center">
-        {/* Section Title */}
+      <div className="container mx-auto px-6">
+        
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 mb-8 text-[#04394e] text-sm font-semibold">
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
+          <span className="text-[#ffbe93]">/</span>
+          <span className="text-[#fa8b41]">Testimonials</span>
+        </div>
+
+        {/* Animated Heading */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-12 text-[#04394e]"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#04394e]"
+          initial={{ opacity: 0, y: -40, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          What Our Students & Parents Say
+          <motion.span
+            initial={{ color: "#04394e" }}
+            animate={{ color: "#fa8b41" }}
+            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
+          >
+            What Our Students & Parents Say
+          </motion.span>
         </motion.h2>
 
         {/* Testimonials Grid */}
