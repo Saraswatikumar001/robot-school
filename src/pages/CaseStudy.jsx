@@ -25,6 +25,27 @@ const caseStudies = [
       "Our mobile robotics labs reached 10 schools across Delhi over a 2-month period.",
     img: "https://c9.shauryasoft.com/media/bny-contentPageBg_103_32.jpg",
   },
+  {
+    title: "Mobile Lab Tour",
+    subtitle: "Community Engagement",
+    summary:
+      "Our mobile robotics labs reached 10 schools across Delhi over a 2-month period.",
+    img: "https://c9.shauryasoft.com/media/bny-contentPageBg_103_32.jpg",
+  },
+  {
+    title: "Mobile Lab Tour",
+    subtitle: "Community Engagement",
+    summary:
+      "Our mobile robotics labs reached 10 schools across Delhi over a 2-month period.",
+    img: "https://c9.shauryasoft.com/media/bny-contentPageBg_103_32.jpg",
+  },
+  {
+    title: "Mobile Lab Tour",
+    subtitle: "Community Engagement",
+    summary:
+      "Our mobile robotics labs reached 10 schools across Delhi over a 2-month period.",
+    img: "https://c9.shauryasoft.com/media/bny-contentPageBg_103_32.jpg",
+  },
 ];
 
 export default function CaseStudy() {

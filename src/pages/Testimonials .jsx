@@ -24,6 +24,27 @@ const testimonials = [
       "This school has sparked my daughter's interest in technology. She’s now more curious and creative than ever!",
     image: "https://randomuser.me/api/portraits/men/47.jpg",
   },
+  {
+    name: "Aarav Sharma",
+    role: "Parent",
+    feedback:
+      "My son absolutely loves the robotics classes! The teachers are very friendly and the lessons are fun yet educational.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Priya Verma",
+    role: "Student",
+    feedback:
+      "Building my first robot was the best experience ever! I learned so much while having fun.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    name: "Rohan Mehta",
+    role: "Parent",
+    feedback:
+      "This school has sparked my daughter's interest in technology. She’s now more curious and creative than ever!",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
+  },
 ];
 
 const Testimonials = () => {

@@ -100,7 +100,7 @@ export default function Footer() {
                             <ul className="mt-3 space-y-1 text-blue-100">
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">About us</a></li>
-                                <li><a href="#">Programs</a></li>
+                                <li><a href="#">Case Study</a></li>
                                 <li><a href="#">Testimonials</a></li>
                             </ul>
                         </div>
