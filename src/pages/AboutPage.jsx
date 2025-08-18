@@ -9,17 +9,17 @@ function Breadcrumbs({ items = [] }) {
                 {items.map((item, idx) => (
                     <li key={item.href ?? idx} className="flex items-center">
                         {idx !== 0 && (
-                            <span className="mx-2 text-gray-300" aria-hidden="true">/</span>
+                            <span className="mx-2 text-gray-400" aria-hidden="true">/</span>
                         )}
                         {item.href ? (
                             <a
                                 href={item.href}
-                                className="text-gray-700 hover:text-gray-900 transition-colors"
+                                className="text-gray-700 hover:text-[#fa8b41] transition-colors"
                             >
                                 {item.label}
                             </a>
                         ) : (
-                            <span className="font-medium text-gray-900">{item.label}</span>
+                            <span className="font-medium text-[#04394e]">{item.label}</span>
                         )}
                     </li>
                 ))}
@@ -28,61 +28,18 @@ function Breadcrumbs({ items = [] }) {
     );
 }
 
-// Small, cute badge
 const Badge = ({ children }) => (
-    <span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">
+    <span className="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-[#fa8b41]">
         {children}
     </span>
 );
 
-// Stat bubble
-const Stat = ({ label, value }) => (
-    <div className="group relative overflow-hidden rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-gray-100 backdrop-blur">
-        <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-tr from-indigo-200 to-rose-200 opacity-50 blur-2xl transition-all group-hover:scale-125" />
-        <dt className="text-sm text-gray-500">{label}</dt>
-        <dd className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900">
-            {value}
-        </dd>
-    </div>
-);
-
-// Value card
 const ValueCard = ({ icon, title, children }) => (
-    <div className="text-center relative rounded-2xl border border-gray-100 bg-[#f8dcca]  p-6 shadow-sm transition-transform hover:-translate-y-1">
-        <div className="mb-3 text-2xl" aria-hidden>
-            {icon}
-        </div>
-        <h4 className="text-2xl font-bold text-black">{title}</h4>
-        <p className="mt-2 text-sm leading-relaxed text-black">{children}</p>
-    </div>
-);
-
-// Timeline item
-const TimelineItem = ({ year, title, text, last = false }) => (
-    <div className="relative pl-8 sm:pl-10">
-        <div className="absolute left-1 top-1 h-4 w-4 -translate-x-1/2 rounded-full bg-indigo-500 ring-4 ring-indigo-100" />
-        {!last && (
-            <div className="absolute left-1 top-5 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-indigo-200 to-transparent" />
-        )}
-        <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
-            <div className="flex items-center gap-3">
-                <Badge>{year}</Badge>
-                <h5 className="text-base font-semibold text-gray-900">{title}</h5>
-            </div>
-            <p className="mt-2 text-sm text-gray-600">{text}</p>
-        </div>
-    </div>
-);
-
-// Team card
-const TeamCard = ({ name, role, initial, color = "bg-indigo-500" }) => (
-    <div className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
-        <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-bold text-white ${color}`}>
-            {initial}
-        </div>
-        <h4 className="text-base font-semibold text-gray-900">{name}</h4>
-        <p className="mt-1 text-sm text-gray-600">{role}</p>
-        <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-tr from-indigo-200 to-rose-200 opacity-50 blur-2xl transition-all group-hover:scale-125" />
+    <div className="relative rounded-2xl bg-gradient-to-br from-orange-200 to-orange-100 p-6 shadow-md text-center transition hover:-translate-y-1">
+        <div className="mb-3 text-3xl">{icon}</div>
+        <h4 className="text-xl font-bold text-[#04394e]">{title}</h4>
+        <p className="mt-2 text-sm leading-relaxed text-gray-700">{children}</p>
+        <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-gradient-to-tr from-orange-200 to-indigo-200 opacity-40 blur-2xl" />
     </div>
 );
 
@@ -123,156 +80,99 @@ const settings = {
     autoplaySpeed: 2500,
     arrows: true,
     responsive: [
-        {
-            breakpoint: 1024,
-            settings: { slidesToShow: 2 },
-        },
-        {
-            breakpoint: 640,
-            settings: { slidesToShow: 1 },
-        },
+        { breakpoint: 1024, settings: { slidesToShow: 2 } },
+        { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
 };
 
-
 export default function AboutPage() {
     return (
-        <div className="relative min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white [background:radial-gradient(1200px_600px_at_120%_-10%,#e0e7ff_10%,transparent_60%),radial-gradient(900px_450px_at_-10%_10%,#fee2e2_10%,transparent_60%)]">
-            {/* Top decoration grid */}
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(99,102,241,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.08)_1px,transparent_1px)] bg-[size:28px_28px]"
-                style={{ maskImage: "radial-gradient(800px 400px at 50% 0%, black, transparent)" }}
-            />
-
-            <div className="mx-auto w-full max-w-7xl px-6 py-8 sm:py-12">
+        <div className="relative min-h-screen bg-gradient-to-b from-orange-50 via-white to-indigo-50">
+            <div className="mx-auto w-full max-w-7xl px-6 py-10">
                 {/* Breadcrumbs */}
-                <Breadcrumbs
-                    items={[
-                        { label: "Home", href: "/" },
-                        { label: "About" },
-                    ]}
-                />
+                <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]} />
 
-                {/* Hero */}
-                <section className="relative mt-6 overflow-hidden rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50 p-8 shadow-sm sm:p-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="relative z-10 grid grid-cols-1 items-center gap-10 md:grid-cols-2"
-                    >
-                        <div>
-                            <Badge>About Roboticks School</Badge>
-                            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-[#04394e] sm:text-5xl">
-                                About Us
-                            </h1>
-                            <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600">
-                                Empowering the next generation of innovators
-                            </p>
-                            <div className="mt-6 flex flex-wrap items-center gap-3">
-                                <a
-                                    href="#mission"
-                                    className="inline-flex items-center rounded-3xl bg-[#fa8b41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition  focus:outline-none focus:ring-2 focus:[#ed884a]"
-                                >
-                                    Our Mission
-                                </a>
-                                <a
-                                    href="#values"
-                                    className="inline-flex items-center rounded-2xl border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50"
-                                >
-                                    Core Values
-                                </a>
-                            </div>
+                {/* Hero Section */}
+                <section className="relative mt-8 grid gap-10 md:grid-cols-2 items-center">
+                    <div>
+                        <Badge>About Roboticks School</Badge>
+                        <h1 className="mt-4 text-4xl font-extrabold text-[#04394e] sm:text-5xl">
+                            Nurturing Tomorrow’s Innovators
+                        </h1>
+                        <p className="mt-4 text-lg text-gray-700 max-w-lg">
+                            At RoboKids, we blend creativity and technology to make STEM joyful,
+                            playful, and inspiring for kids of all ages.
+                        </p>
+                        <div className="mt-6 flex gap-4">
+                            <a
+                                href="#mission"
+                                className="rounded-xl bg-[#fa8b41] px-5 py-2 text-sm font-semibold text-white shadow hover:bg-orange-400"
+                            >
+                                Our Mission
+                            </a>
+                            <a
+                                href="#values"
+                                className="rounded-xl border border-gray-200 bg-white px-5 py-2 text-sm font-semibold text-[#04394e] shadow hover:bg-gray-50"
+                            >
+                                Core Values
+                            </a>
                         </div>
-
-                        {/* Cute robot illustration using pure CSS shapes */}
-                        <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="relative mx-auto h-64 w-64 md:h-80 md:w-80"
-                        >
-                            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-indigo-200 to-rose-100 shadow-inner" />
-                            <div className="absolute inset-4 rounded-[2rem] bg-white shadow" />
-                            {/* Head */}
-                            <div className="absolute left-1/2 top-6 w-40 -translate-x-1/2 rounded-3xl bg-gray-900 p-3">
-                                <div className="flex items-center justify-between rounded-2xl bg-black px-4 py-3">
-                                    <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                                    <span className="h-3 w-3 rounded-full bg-cyan-400" />
-                                    <span className="h-3 w-3 rounded-full bg-amber-400" />
-                                </div>
-                            </div>
-                            {/* Antenna */}
-                            <div className="absolute left-1/2 top-2 h-4 w-1 -translate-x-1/2 rounded-full bg-gray-800" />
-                            <div className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-pink-400" />
-                            {/* Body */}
-                            <div className="absolute bottom-6 left-1/2 w-44 -translate-x-1/2 rounded-2xl bg-[#04394e] p-3 shadow-lg">
-                                <div className="grid grid-cols-3 gap-2">
-                                    <div className="h-4 rounded bg-indigo-300" />
-                                    <div className="h-4 rounded bg-indigo-300" />
-                                    <div className="h-4 rounded bg-indigo-300" />
-                                    <div className="col-span-3 h-6 rounded bg-indigo-300" />
-                                </div>
-                            </div>
-                            {/* Arms */}
-                            <div className="absolute bottom-16 left-8 h-2 w-8 rounded bg-gray-300" />
-                            <div className="absolute bottom-16 right-8 h-2 w-8 rounded bg-gray-300" />
-                        </motion.div>
-                    </motion.div>
-
-                    {/* Floating candy shapes */}
+                    </div>
                     <motion.div
-                        aria-hidden
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-gradient-to-tr from-indigo-200 to-rose-200 blur-3xl"
-                    />
-                    <div
-                        aria-hidden
-                        className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-gradient-to-tr from-rose-200 to-indigo-200 blur-3xl"
-                    />
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                        className="relative flex justify-center"
+                    >
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/030/492/783/large_2x/cute-robot-working-on-a-laptop-3d-render-technology-concept-ai-generated-free-photo.jpg"
+                            alt="Cute Robot Illustration"
+                            className="w-72 md:w-96 rounded-lg shadow-lg"
+                        />
+                    </motion.div>
                 </section>
+
                 {/* Mission & Values */}
-                <section id="mission" className="mt-14">
-                    <div className="mx-auto max-w-3xl text-center">
-                        <h2 className="text-2xl font-bold text-[#04394e] sm:text-4xl">Our Mission</h2>
-                        <p className="mt-3 text-base leading-relaxed text-gray-800">
-                            Make STEM joyful and accessible. We help kids think like makers—curious, collaborative,
-                            and fearless—by turning complex ideas into playful experiences.
+                <section id="mission" className="mt-16">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold text-[#04394e]">Our Mission</h2>
+                        <p className="mt-3 text-lg text-gray-700 max-w-2xl mx-auto">
+                            To empower kids with creativity, problem-solving, and critical thinking
+                            skills by turning STEM concepts into fun and engaging experiences.
                         </p>
                     </div>
 
-                    <div id="values" className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-                        <ValueCard icon={<span>🤖</span>} title="Build with Play">
-                            Learning sticks when it’s fun. We mix creativity with structured challenges so kids
-                            feel proud of what they make.
+                    <div
+                        id="values"
+                        className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                    >
+                        <ValueCard icon="🤖" title="Build with Play">
+                            Kids learn best through play. We combine structured challenges with
+                            imaginative freedom.
                         </ValueCard>
-                        <ValueCard icon={<span>🧠</span>} title="Think Critically">
-                            We encourage questions, experiments, and reflection—because every bug is a stepping
-                            stone to a better solution.
+                        <ValueCard icon="🧠" title="Think Critically">
+                            We embrace curiosity and teach kids to see every problem as a puzzle
+                            waiting to be solved.
                         </ValueCard>
-                        <ValueCard icon={<span>🤝</span>} title="Learn Together">
-                            Teamwork makes sparks fly. Collaboration and communication are embedded in every activity.
+                        <ValueCard icon="🤝" title="Learn Together">
+                            Collaboration is key—teamwork builds stronger ideas and friendships.
                         </ValueCard>
                     </div>
                 </section>
 
-                {/* Journey / Timeline */}
-                <section className="mt-14">
-                    {/* Team */}
+                {/* Robo Crew Section (kept same) */}
+                <section className="mt-16">
                     <h3 className="text-3xl font-bold text-center text-[#04394e] mb-8">
                         Meet the Robo Crew
                     </h3>
                     <Slider {...settings}>
                         {members.map((member, index) => (
                             <div key={index} className="px-3">
-                                <div className="bg-white  rounded-xl overflow-hidden shadow-lg  transition transform hover:-translate-y-2">
+                                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
                                     <img
                                         src={member.img}
                                         alt={member.name}
-                                        className="w-full h-48 object-cover"
+                                        className="h-52 w-full object-cover"
                                     />
                                     <div className="p-4 text-center">
                                         <h4 className="text-lg font-bold text-[#04394e]">
@@ -284,37 +184,48 @@ export default function AboutPage() {
                         ))}
                     </Slider>
                 </section>
-                {/* Call to action */}
-                <section className="mt-16 overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-sm sm:p-10">
-                    <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-                        <div>
-                            <h3 className="text-3xl font-bold text-[#04394e]">Want to bring RoboKids to your school?</h3>
 
-                            <div className="mt-6 flex flex-wrap gap-3">
+                {/* Call to Action */}
+                <section className="mt-20 rounded-3xl bg-gradient-to-r from-orange-100 via-orange-200 to-indigo-100 p-10 shadow">
+                    <div className="grid items-center gap-8 md:grid-cols-2">
+                        <div>
+                            <h3 className="text-3xl font-bold text-[#04394e]">
+                                Bring RoboKids to Your School 🚀
+                            </h3>
+                            <p className="mt-3 text-gray-700 max-w-lg">
+                                Partner with us to inspire creativity, problem-solving, and a love
+                                for robotics in your students.
+                            </p>
+                            <div className="mt-6 flex gap-4">
                                 <a
                                     href="/contact"
-                                    className="inline-flex items-center rounded-2xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-300"
+                                    className="rounded-xl bg-[#fa8b41] px-5 py-2 text-sm font-semibold text-white shadow hover:bg-orange-400"
                                 >
                                     Contact Us
                                 </a>
                                 <a
                                     href="/programs"
-                                    className="inline-flex items-center rounded-2xl border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50"
+                                    className="rounded-xl border border-gray-200 bg-white px-5 py-2 text-sm font-semibold text-[#04394e] shadow hover:bg-gray-50"
                                 >
                                     View Programs
                                 </a>
                             </div>
                         </div>
-                        <div className="relative h-48 w-full">
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-100 to-pink-100" />
-                            <div className="absolute inset-3 rounded-2xl border-2 border-dashed border-indigo-300" />
-                            <div className="absolute left-6 top-6 h-5 w-5 animate-bounce rounded-full bg-indigo-400" />
-                            <div className="absolute right-10 top-10 h-4 w-4 animate-pulse rounded-full bg-pink-400" />
-                            <div className="absolute bottom-6 right-6 h-6 w-6 animate-bounce rounded-full bg-amber-400" />
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="flex justify-center"
+                        >
+                            <img
+                                src="https://images.stockcake.com/public/0/0/f/00f33166-e0d0-47dd-b582-2eddeb646777_large/advanced-robotics-laboratory-stockcake.jpg"
+                                alt="Robotics Collaboration"
+                                className="w-64 md:w-96 h-auto object-cover  text-sm rounded-lg shadow-lg"
+                            />
+                        </motion.div>
                     </div>
                 </section>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }

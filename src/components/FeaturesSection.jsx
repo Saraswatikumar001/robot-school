@@ -60,7 +60,7 @@ const FeaturesSection = () => {
               animate={feature.animation.animate}
               transition={feature.animation.transition}
             />
-            <h3 className="text-xl font-bold text-blue-700">
+            <h3 className="text-xl font-bold text-orange-700">
               {feature.title}
             </h3>
             <p className="text-gray-600 text-sm mt-2">{feature.desc}</p>

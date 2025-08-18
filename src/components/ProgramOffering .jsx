@@ -72,7 +72,7 @@ const ProgramOffering = () => {
   return (
     <section className="bg-gradient-to-r from-[#173c5c] to-[#44a5f9] py-16 relative overflow-hidden">
       <div className="text-center mb-12">
-        <p className="text-[#fa8b41] uppercase tracking-wider text-sm font-semibold">
+        <p className="text-[#e8792f] uppercase tracking-wider text-sm font-semibold">
           Program Offering
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">
@@ -95,7 +95,7 @@ const ProgramOffering = () => {
               rotate: [0, 1.5, -1.5, 0], // playful wiggle
               transition: { duration: 0.4 },
             }}
-            className="bg-gradient-to-b from-gray-200 to-blue-300 rounded-xl shadow-lg p-6 text-center"
+            className="bg-white rounded-xl shadow-lg p-6 text-center"
           >
             <motion.div
               className="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
@@ -116,7 +116,7 @@ const ProgramOffering = () => {
             <p className="text-[#04394e] text-sm leading-relaxed mb-6">
               {program.description}
             </p>
-            <button className="bg-[#f26b0c] hover:bg-orange-600 tex-[#04394e] border-4 border-white font-semibold px-6 py-2 rounded-full shadow-md transition-all duration-300">
+            <button className="bg-[#f26b0c] hover:bg-orange-600 text-white border-4 border-white font-semibold px-6 py-2 rounded-full shadow-md transition-all duration-300">
               LEARN MORE
             </button>
           </motion.div>

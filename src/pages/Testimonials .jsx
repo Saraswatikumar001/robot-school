@@ -24,7 +24,7 @@ const testimonials = [
       "This school has sparked my daughter's interest in technology. She’s now more curious and creative than ever!",
     image: "https://randomuser.me/api/portraits/men/47.jpg",
   },
-  {
+   {
     name: "Aarav Sharma",
     role: "Parent",
     feedback:
@@ -51,19 +51,27 @@ const Testimonials = () => {
   return (
     <>
       {/* Heading Section */}
-      <section className="py-12 bg-gradient-to-r from-[#fce8dc] via-[#fcccae] to-[#fce8dc]">
-        <motion.h1
-          className="text-center text-5xl md:text-6xl font-extrabold drop-shadow-xl bg-gradient-to-r from-[#fa8b41] via-[#ff6f3c] to-[#c75218] bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: -50 }}
+      <section className="py-16 bg-gradient-to-b from-orange-100 via-orange-200 to-orange-300">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0px 0px 25px rgba(255,255,255,0.9)",
-          }}
         >
-          Testimonials
-        </motion.h1>
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-orange-500 drop-shadow-md"
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0px 0px 25px rgba(255,165,0,0.8)",
+            }}
+          >
+            Testimonials ✨
+          </motion.h1>
+
+          <p className="mt-4 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+            Parents and students share their experience with our robotics journey.
+          </p>
+        </motion.div>
       </section>
 
       {/* Testimonials Section */}
@@ -71,7 +79,7 @@ const Testimonials = () => {
         <div className="container mx-auto px-6">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 text-[#04394e] text-sm font-semibold">
-            <Link to="/" className="cursor-pointer">
+            <Link to="/" className="cursor-pointer hover:text-[#fa8b41]">
               Home
             </Link>
             <span className="text-[#5d5c5b]">/</span>
@@ -94,31 +102,31 @@ const Testimonials = () => {
             {testimonials.map((t, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-3xl p-8 shadow-lg relative group overflow-hidden"
+                className="relative bg-gradient-to-b from-white to-[#fff3eb] rounded-3xl shadow-xl p-8 flex flex-col items-center text-center group"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.05 }}
               >
-                {/* Top Accent */}
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#fa8b41] to-[#c75218]" />
+                {/* Decorative Circle Glow */}
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-gradient-to-tr from-[#fa8b41] to-[#c75218] opacity-20 blur-2xl"></div>
 
                 {/* Profile Image */}
                 <motion.img
                   src={t.image}
                   alt={t.name}
-                  className="w-20 h-20 rounded-full border-4 border-[#fa8b41] shadow-md mx-auto mb-6"
-                  whileHover={{ rotate: 5 }}
+                  className="w-24 h-24 rounded-full border-4 border-[#fa8b41] shadow-lg mb-6 relative z-10"
+                  whileHover={{ rotate: 6 }}
                   transition={{ duration: 0.3 }}
                 />
 
                 {/* Feedback */}
-                <p className="text-gray-600 italic text-center mb-6 leading-relaxed">
-                  "{t.feedback}"
+                <p className="text-gray-700 italic mb-6 leading-relaxed">
+                  “{t.feedback}”
                 </p>
 
                 {/* Name & Role */}
-                <div className="text-center">
+                <div>
                   <h3 className="text-lg font-bold text-[#04394e]">
                     {t.name}
                   </h3>
@@ -127,8 +135,8 @@ const Testimonials = () => {
                   </span>
                 </div>
 
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#fa8b41]/10 to-[#c75218]/10 opacity-0 group-hover:opacity-100 transition duration-300" />
+                {/* Gradient Border on Hover */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#fa8b41] transition-all duration-300"></div>
               </motion.div>
             ))}
           </div>
