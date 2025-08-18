@@ -101,7 +101,7 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className="block flex items-center text-white hover:text-[#fa8b41] transition-colors duration-300 text-lg"
+                  className="flex items-center text-white hover:text-[#fa8b41] transition-colors duration-300 text-lg"
                 >
                   {link.icon} {link.name}
                 </Link>
