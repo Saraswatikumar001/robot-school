@@ -49,7 +49,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/fusiontechlab/" className="hover:text-[#fa8b41]">
                                 <FaInstagram />
                             </a>                        
-                            <a href="#" className="hover:text-[#fa8b41]">
+                            <a href="https://youtube.com/@fusiontechlab?si=AbJpYkdl1SeXHpkb" className="hover:text-[#fa8b41]">
                                 <FaYoutube />
                             </a>
                         </div>
