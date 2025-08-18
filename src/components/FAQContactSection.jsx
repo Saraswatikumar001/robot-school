@@ -47,10 +47,10 @@ const FAQContactSection = () => {
                             onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                         >
                             <div className="flex justify-between items-center">
-                                <h3 className="font-semibold text-lg text-blue-600">
+                                <h3 className="font-semibold text-lg text-black">
                                     {faq.question}
                                 </h3>
-                                <span className="text-xl text-gray-500">
+                                <span className="text-xl text-gray-600">
                                     {openIndex === idx ? "−" : "+"}
                                 </span>
                             </div>

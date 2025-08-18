@@ -12,12 +12,12 @@ function Breadcrumbs({ items = [] }) {
                             <span className="mx-2 text-gray-400" aria-hidden="true">/</span>
                         )}
                         {item.href ? (
-                            <a
+                            <link
                                 href={item.href}
                                 className="text-gray-700 hover:text-[#fa8b41] transition-colors"
                             >
                                 {item.label}
-                            </a>
+                            </link>
                         ) : (
                             <span className="font-medium text-[#04394e]">{item.label}</span>
                         )}

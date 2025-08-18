@@ -43,12 +43,12 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-10 pt-5">
                         {/* Social Icons */}
                         <div className="flex justify-center md:justify-start gap-4 text-2xl">
-                            <a href="#" className="hover:text-[#fa8b41]">
+                            <a href="https://www.facebook.com/fusiontechlab" className="hover:text-[#fa8b41]">
                                 <FaFacebookF />
                             </a>
-                            <a href="#" className="hover:text-[#fa8b41]">
+                            <a href="https://www.instagram.com/fusiontechlab/" className="hover:text-[#fa8b41]">
                                 <FaInstagram />
-                            </a>
+                            </a>                        
                             <a href="#" className="hover:text-[#fa8b41]">
                                 <FaYoutube />
                             </a>
@@ -57,20 +57,20 @@ export default function Footer() {
                         {/* Phone */}
                         <div>
                             <p className="font-bold">Phone Number.</p>
-                            <a href="tel:+91 (933) 093 99 27" className="text-[#fa8b41]">+91 (933) 093 99 27</a>
+                            <a href="tel:+91 (933) 093 99 27" className="text-[#fa8b41]">(033) 48028513</a>
                         </div>
 
                         {/* Email */}
                         <div>
                             <p className="font-bold">Email Address</p>
-                            <a href="mailto:ceo@fusiontechlab.com" className="text-[#fa8b41]">ceo@fusiontechlab.com</a>
+                            <a href="mailto:ceo@fusiontechlab.com" className="text-[#fa8b41]">in@fusiontechlab.com</a>
                         </div>
 
                         {/* Address */}
                         <div>
                             <p className="font-bold">Our Address</p>
                             <p className="text-[#fa8b41]">
-                                201-05 50th Ave, Flushing, NY
+                                AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India
                             </p>
                         </div>
                     </div>

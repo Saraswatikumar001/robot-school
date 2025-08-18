@@ -68,7 +68,7 @@ const Testimonials = () => {
             Testimonials ✨
           </motion.h1>
 
-          <p className="mt-4 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="mt-4 text-2xl md:text-xl text-black font-medium max-w-2xl mx-auto">
             Parents and students share their experience with our robotics journey.
           </p>
         </motion.div>
