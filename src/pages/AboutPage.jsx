@@ -29,16 +29,16 @@ function Breadcrumbs({ items = [] }) {
 }
 
 const Badge = ({ children }) => (
-    <span className="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-[#fa8b41]">
+    <span className="inline-flex items-center rounded-full border border-[#fa8b41] bg-orange-50 px-3 py-1 text-xs font-medium text-[#fa8b41]">
         {children}
     </span>
 );
 
 const ValueCard = ({ icon, title, children }) => (
-    <div className="relative rounded-2xl bg-gradient-to-br from-orange-200 to-orange-100 p-6 shadow-md text-center transition hover:-translate-y-1">
+    <div className="relative rounded-2xl bg-[#fa8b41] p-6 shadow-md text-center transition hover:-translate-y-1">
         <div className="mb-3 text-3xl">{icon}</div>
-        <h4 className="text-xl font-bold text-[#04394e]">{title}</h4>
-        <p className="mt-2 text-sm leading-relaxed text-gray-700">{children}</p>
+        <h4 className="text-2xl font-bold text-[#04394e]">{title}</h4>
+        <p className="mt-2 text-sm leading-relaxed text-[white]">{children}</p>
         <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-gradient-to-tr from-orange-200 to-indigo-200 opacity-40 blur-2xl" />
     </div>
 );
@@ -186,20 +186,20 @@ export default function AboutPage() {
                 </section>
 
                 {/* Call to Action */}
-                <section className="mt-20 rounded-3xl bg-gradient-to-r from-orange-100 via-orange-200 to-indigo-100 p-10 shadow">
+                <section className="mt-20 rounded-3xl bg-[#fa8b41] p-10 shadow">
                     <div className="grid items-center gap-8 md:grid-cols-2">
                         <div>
                             <h3 className="text-3xl font-bold text-[#04394e]">
                                 Bring RoboKids to Your School 🚀
                             </h3>
-                            <p className="mt-3 text-gray-700 max-w-lg">
+                            <p className="mt-3 text-white  max-w-lg">
                                 Partner with us to inspire creativity, problem-solving, and a love
                                 for robotics in your students.
                             </p>
                             <div className="mt-6 flex gap-4">
                                 <a
                                     href="/contact"
-                                    className="rounded-xl bg-[#fa8b41] px-5 py-2 text-sm font-semibold text-white shadow hover:bg-orange-400"
+                                    className="rounded-xl bg-[#04394e] px-5 py-2 text-sm font-semibold text-white shadow hover:bg-[#3f6878]"
                                 >
                                     Contact Us
                                 </a>
