@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -81,7 +82,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         {/* Logo + About */}
                         <div>
-                            <h2 className="text-2xl font-bold flex items-center gap-2">
+                            <h2 className="text-2xl font-bold flex items-center gap-2 hover:text-[#FA8B41]">
                                 🤖 RoboTech
                             </h2>
                             <p className="mt-3 text-sm text-blue-100">
@@ -97,11 +98,11 @@ export default function Footer() {
                                 Navigation.
                                 <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
-                            <ul className="mt-3 space-y-1 text-blue-100">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Case Study</a></li>
-                                <li><a href="#">Testimonials</a></li>
+                            <ul className="mt-3 space-y-1">
+                                <li className="hover: text[#FA8B41]"><a href="#">Home</a></li>
+                                <li className="hover: text[#FA8B41]"><a href="#">About us</a></li>
+                                <li className="hover: text[#FA8B41]"><a href="#">Case Study</a></li>
+                                <li className="hover: text[#FA8B41]"><a href="#">Testimonials</a></li>
                             </ul>
                         </div>
 
@@ -112,10 +113,10 @@ export default function Footer() {
                                 <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <ul className="mt-3 space-y-1 text-blue-100">
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Schedule</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><Link to="/pricing">Pricing</Link></li>
+                                <li><Link to="/schedule">Schedule</Link></li>
+                                <li><Link to="/Faq">FAQ</Link></li>
+                                <li><Link to="/Contact">Contact us</Link></li>
                             </ul>
                         </div>
 

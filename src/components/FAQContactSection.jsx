@@ -31,7 +31,7 @@ const FAQContactSection = () => {
             {/* FAQ Section */}
             <div>
                 <p className="text-lg font-bold text-yellow-600 uppercase">FAQ</p>
-                <h2 className="text-4xl font-bold text-orange-700 mt-2">
+                <h2 className="text-4xl font-bold text-orange-500 mt-2">
                     Want to Know More?
                 </h2>
                 <p className="text-gray-800 mt-4 font-semibold">

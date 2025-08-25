@@ -50,9 +50,8 @@ const caseStudies = [
 
 export default function CaseStudy() {
   return (
-    <section className="bg-gradient-to-b from-[#fce8dc] to-[#fcccae] text-[#04394e] py-16">
+    <section className="bg-gradient-to-b from-[#fce8dced] to-[#f4d8c6] text-[#04394e] py-16">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Breadcrumb */}
         <nav className="text-sm mb-6">
           <ol className="list-reset flex text-gray-700">
