@@ -186,13 +186,13 @@ export default function AboutPage() {
                 </section>
 
                 {/* Call to Action */}
-                <section className="mt-20 rounded-3xl bg-[#fa8b41] p-10 shadow">
+                <section className="mt-20 rounded-3xl bg-white p-10 shadow-lg">
                     <div className="grid items-center gap-8 md:grid-cols-2">
                         <div>
                             <h3 className="text-3xl font-bold text-[#04394e]">
                                 Bring RoboKids to Your School 🚀
                             </h3>
-                            <p className="mt-3 text-white  max-w-lg">
+                            <p className="mt-3 text-[#04394e] max-w-lg">
                                 Partner with us to inspire creativity, problem-solving, and a love
                                 for robotics in your students.
                             </p>
