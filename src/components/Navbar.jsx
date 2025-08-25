@@ -139,6 +139,7 @@
 // export default Navbar;
 // src/components/Navbar.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/img/roboticslogo.png";
 import { motion } from "framer-motion";
 import {
@@ -149,9 +150,9 @@ import {
   FaTwitter,
   FaLinkedin,
   FaHome,
-  FaInfoCircle,
+  FaProjectDiagram,
   FaBookOpen,
-  FaQuoteLeft,
+  FaComments,
   FaEnvelope,
 } from "react-icons/fa";
 
@@ -164,11 +165,11 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <FaMapMarkerAlt className="text-[#F78A41]" />
-            <span>34 Street Name, City Name Here, United States</span>
+            <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India</span>
           </div>
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-[#F78A41]" />
-            <span>+1 123 456 7890</span>
+            <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">+(033) 48028513</span>
           </div>
         </div>
 
@@ -176,7 +177,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <FaClock className="text-[#F78A41]" />
-            <span>Sun–Fri: 8.00AM - 4.00PM | Sat: Closed</span>
+            <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">Sun–Fri: 8.00AM - 4.00PM | Sat: Closed</span>
           </div>
           {/* Social Icons */}
           <div className="flex gap-3 text-[#04394E]">
@@ -236,36 +237,73 @@ export default function Navbar() {
           {/* Menu */}
           <ul className="hidden md:flex gap-6 bg-white rounded-full px-6 py-3 shadow-md">
             <li className="flex items-center gap-2">
-              <FaHome className="text-[#F78A41]" />
-              <a href="#" className="text-[#F78A41] font-semibold">
+              <FaHome className="text-[#F78A41] transition-colors duration-300 ease-in-out" />
+              <Link 
+                to="/"
+                className="text-[#F78A41] font-semibold transition-colors duration-300 ease-in-out"
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
-              <FaInfoCircle className="text-gray-500" />
-              <a href="/about" className="text-gray-700 hover:text-[#F78A41]">
+              <FaProjectDiagram className="text-gray-500 transition-colors duration-300 ease-in-out" />
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-[#F78A41]  transition-colors duration-300 ease-in-out font-semibold"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
-              <FaBookOpen className="text-gray-500" />
-              <a href="/casestudy" className="text-gray-700 hover:text-[#F78A41]">
+              <FaBookOpen className="text-gray-500 transition-colors duration-300 ease-in-out" />
+              <Link
+                to="/casestudy"
+                className="text-gray-700 hover:text-[#F78A41] font-semibold transition-colors duration-300 ease-in-out"
+              >
                 Case Study
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
-              <FaQuoteLeft className="text-gray-500" />
-              <a href="/testimonials" className="text-gray-700 hover:text-[#F78A41]">
+              <FaComments className="text-gray-500 transition-colors duration-300 ease-in-out" />
+              <Link
+                to="/testimonials"
+                className="text-gray-700 hover:text-[#F78A41] font-semibold transition-colors duration-300 ease-in-out"
+              >
                 Testimonials
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-gray-500" />
-              <a href="/contact" className="text-gray-700 hover:text-[#F78A41]">
+              <FaEnvelope className="text-gray-500 transition-colors duration-300 ease-in-out" />
+              <Link
+                to="/contact"
+                className="text-gray-700 hover:text-[#F78A41] font-semibold transition-colors duration-300 ease-in-out"
+              >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
+
+          {/* Enroll Now Button (Desktop) */}
+          <motion.a
+            href="#"
+            className="hidden md:inline-block bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold shadow-lg border-2 border-transparent hover:border-white"
+            animate={{
+              scale: [1, 1.05, 1],
+              opacity: [1, 0.85, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{
+              scale: 1.15,
+              boxShadow: "0px 0px 15px rgba(250,139,65,0.8)",
+            }}
+          >
+            Enroll Now
+          </motion.a>
+
 
           {/* Mobile Menu (hamburger) */}
           <div className="md:hidden text-white text-2xl cursor-pointer">

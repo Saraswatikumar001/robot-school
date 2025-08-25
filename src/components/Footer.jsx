@@ -57,19 +57,19 @@ export default function Footer() {
 
                         {/* Phone */}
                         <div>
-                            <p className="font-bold">Phone Number.</p>
+                            <p className="font-bold hover:text-[#ffbe92] transition-colors duration-300 ease-in-out">Phone Number.</p>
                             <a href="tel:+91 (933) 093 99 27" className="text-[#fa8b41]">(033) 48028513</a>
                         </div>
 
                         {/* Email */}
                         <div>
-                            <p className="font-bold">Email Address</p>
+                            <p className="font-bold hover:text-[#ffbe92] transition-colors duration-300 ease-in-out">Email Address</p>
                             <a href="mailto:ceo@fusiontechlab.com" className="text-[#fa8b41]">in@fusiontechlab.com</a>
                         </div>
 
                         {/* Address */}
                         <div>
-                            <p className="font-bold">Our Address</p>
+                            <p className="font-bold hover:text-[#ffbe92] transition-colors duration-300 ease-in-out">Our Address</p>
                             <p className="text-[#fa8b41]">
                                 AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India
                             </p>
@@ -99,10 +99,10 @@ export default function Footer() {
                                 <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <ul className="mt-3 space-y-1">
-                                <li className="hover: text[#FA8B41]"><a href="#">Home</a></li>
-                                <li className="hover: text[#FA8B41]"><a href="#">About us</a></li>
-                                <li className="hover: text[#FA8B41]"><a href="#">Case Study</a></li>
-                                <li className="hover: text[#FA8B41]"><a href="#">Testimonials</a></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><a href="/">Home</a></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><a href="/about">About us</a></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><a href="/casestudy">Case Study</a></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><a href="/testimonials">Testimonials</a></li>
                             </ul>
                         </div>
 
@@ -113,10 +113,10 @@ export default function Footer() {
                                 <span className="block w-8 h-1 bg-[#fa8b41] mt-1"></span>
                             </p>
                             <ul className="mt-3 space-y-1 text-blue-100">
-                                <li><Link to="/pricing">Pricing</Link></li>
-                                <li><Link to="/schedule">Schedule</Link></li>
-                                <li><Link to="/Faq">FAQ</Link></li>
-                                <li><Link to="/Contact">Contact us</Link></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><Link to="/pricing">Pricing</Link></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><Link to="/schedule">Schedule</Link></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><Link to="/faq">FAQ</Link></li>
+                                <li className="hover:text-[#ffbe92] transition-colors duration-300 ease-in-out"><Link to="/contact">Contact us</Link></li>
                             </ul>
                         </div>
 
