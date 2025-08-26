@@ -11,12 +11,12 @@ const plans = [
     bg: "bg-white",
     text: "text-gray-800",
     btn: "bg-[#F78A41] text-white hover:bg-[#fa9e57]",
-    icon: "🤖", // You can replace with real images/icons
+    icon: "🤖", 
   },
   {
     price: "₹150",
     period: "per month",
-    title: "For 6th to 8th graders",
+    title: "For 3rd to 4th graders",
     details: ["2 classes per week", "Theory and practice"],
     buttonText: "Select Plan",
     bg: "bg-[#F78A41]",
@@ -27,8 +27,8 @@ const plans = [
   {
     price: "₹200",
     period: "per month",
-    title: "For teenagers",
-    details: ["2 classes per week", "Own graduation project"],
+    title: "For 3rd to 4th graders",
+    details: ["2 classes per week", "Own  project"],
     buttonText: "Select Plan",
     bg: "bg-white",
     text: "text-gray-800",
@@ -92,7 +92,7 @@ export default function Pricing() {
           {/* Left Image */}
           <div className="rounded-2xl overflow-hidden shadow-lg h-full">
             <img
-              src="https://www.shutterstock.com/shutterstock/videos/1106494753/thumb/1.jpg?ip=x480"
+              src="https://st3.depositphotos.com/1017986/13805/i/450/depositphotos_138052802-stock-photo-happy-children-with-3d-printer.jpg"
               alt="Kids learning robotics"
               className="w-full h-full object-cover"
             />
@@ -101,25 +101,20 @@ export default function Pricing() {
           {/* Right Content */}
           <div className="bg-white text-black rounded-2xl p-10 shadow-lg flex flex-col justify-center h-full">
             <p className="text-sm uppercase font-semibold text-[#F78A41] mb-2 tracking-wide">
-              How We Teach
+             How We Inspire
             </p>
 
             <h2 className="text-4xl md:text-4xl font-bold mb-6 leading-snug">
-              Each Lesson Brings <br />
+              Each Class Unlocks<br />
 
-              Exciting <span className="text-[#F78A41]">Discoveries.</span>
+             A World of <span className="text-[#F78A41]"> Possibilities.</span>
             </h2>
 
             <p className="text-black/90 mb-4 font-medium text-lg">
-              Our programs are designed for all age categories and engage every
-              child in the group.
+              Our courses are crafted for curious minds of every age, sparking creativity and teamwork in every session.
             </p>
             <p className="text-black/80 mb-6 leading-relaxed font-normal text-sm">
-              Our children have seen them in movies, played with them as toys, and
-              read about them in books. Now it’s time to learn how to develop and
-              program robots themselves! Our robotics courses will teach your kids
-              valuable concepts in engineering and physics and help them create
-              their own cool robots.
+              "Children have always dreamed of futuristic machines, and now they can actually create them! Through fun, hands-on projects, kids explore coding, mechanics, and electronics while building and programming their own robots. This exciting journey not only fuels their imagination but also develops critical skills in problem-solving, creativity, and teamwork."
             </p>
 
             {/* Features List */}
@@ -128,19 +123,19 @@ export default function Pricing() {
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#F78A41] text-[#04394E] font-bold">
                   ✓
                 </span>
-                <span className="font-medium">Develop problem-solving skills</span>
+                <span className="font-medium">Learn critical thinking through real challenges</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#F78A41] text-[#04394E] font-bold">
                   ✓
                 </span>
-                <span className="font-medium">Build self-confidence, hard and soft skills</span>
+                <span className="font-medium">Gain teamwork and communication skills</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#F78A41] text-[#04394E] font-bold">
                   ✓
                 </span>
-                <span className="font-medium">Vast options for employment in the future</span>
+                <span className="font-medium">Prepare for a technology-driven future</span>
               </li>
             </ul>
           </div>
