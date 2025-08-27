@@ -70,9 +70,9 @@ export default function Footer() {
                         {/* Address */}
                         <div>
                             <p className="font-bold hover:text-[#ffbe92] transition-colors duration-300 ease-in-out">Our Address</p>
-                            <p className="text-[#fa8b41]">
+                            <a href="https://maps.app.goo.gl/JRGqzZWU73UFtnFx5" className="text-[#fa8b41]">
                                 AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India
-                            </p>
+                            </a>
                         </div>
                     </div>
 
