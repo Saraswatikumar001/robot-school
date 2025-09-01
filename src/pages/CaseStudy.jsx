@@ -26,13 +26,6 @@ const caseStudies = [
     img: "https://rxiedu.com/wp-content/uploads/2024/10/Leonardo_Phoenix_A_vibrant_and_lively_robotics_class_for_kids_0.jpg",
   },
   {
-    title: "AI Robotics Bootcamp",
-    subtitle: "Advanced Module",
-    summary:
-      "Teens learned to build vision-enabled bots with object tracking in just 4 days.",
-    img: "https://media.istockphoto.com/id/1206218645/photo/female-pupil-building-robotic-car-in-science-lesson.jpg?s=612x612&w=0&k=20&c=S3Vt67S2zP1kvqBGR-gveGK3_AuZ_ztVzc6rJ5SixnI=",
-  },
-   {
     title: "Robot Coding Workshop",
     subtitle: "School Outreach Program",
     summary:
@@ -45,6 +38,13 @@ const caseStudies = [
     summary:
       "Teens learned to build vision-enabled bots with object tracking in just 4 days.",
     img: "https://media.istockphoto.com/id/1206218645/photo/female-pupil-building-robotic-car-in-science-lesson.jpg?s=612x612&w=0&k=20&c=S3Vt67S2zP1kvqBGR-gveGK3_AuZ_ztVzc6rJ5SixnI=",
+  },
+   {
+    title: "Robot Coding Workshop",
+    subtitle: "School Outreach Program",
+    summary:
+      "150+ students built line-following robots from scratch, sparking creativity and teamwork.",
+    img: "https://rxiedu.com/wp-content/uploads/2024/10/Leonardo_Phoenix_A_vibrant_and_lively_robotics_class_for_kids_0.jpg",
   },
 ];
 
