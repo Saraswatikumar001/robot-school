@@ -39,7 +39,7 @@ const RoboticsSection = () => {
                     -translate-x-1/2 -translate-y-1/2
                     sm:left-[70%] sm:top-[50%] 
                     md:left-[80%] md:top-[45%] 
-                    lg:left-[89%] lg:top-[40%] 
+                    lg:left-[101%] lg:top-[50%] 
                     flex items-center justify-center
                 "
                     animate={{
