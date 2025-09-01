@@ -73,16 +73,38 @@ const members = [
 const settings = {
     dots: false,
     infinite: true,
-    speed: 700,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    speed: 600,
     autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+    slidesToShow: 3, // default for large screens
+    slidesToScroll: 1,
     responsive: [
-        { breakpoint: 1024, settings: { slidesToShow: 2 } },
-        { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
+        {
+            breakpoint: 1280, // large screens (lg)
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 1024, // tablets
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 768, // mobile
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 480, // small mobile
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ]
 };
 
 export default function AboutPage() {
