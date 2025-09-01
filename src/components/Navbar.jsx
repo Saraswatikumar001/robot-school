@@ -150,7 +150,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <motion.a
-                href="/"
+                href="/enroll"
                 onClick={() => setIsOpen(false)}
                 className="block bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold text-center shadow-lg"
                 whileHover={{ scale: 1.05 }}
