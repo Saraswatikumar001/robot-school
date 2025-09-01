@@ -33,7 +33,15 @@ const RoboticsSection = () => {
 
                 {/* Animated Play Button */}
                 <motion.a
-                    className="absolute left-[89%] top-[40%] flex items-center justify-center"
+                    className="
+                    absolute 
+                    left-1/2 top-1/2 
+                    -translate-x-1/2 -translate-y-1/2
+                    sm:left-[70%] sm:top-[50%] 
+                    md:left-[80%] md:top-[45%] 
+                    lg:left-[89%] lg:top-[40%] 
+                    flex items-center justify-center
+                "
                     animate={{
                         scale: [1, 1.2, 1],
                         rotate: [0, 5, -5, 0]
@@ -44,22 +52,23 @@ const RoboticsSection = () => {
                         ease: "easeInOut"
                     }}
                 >
-                    <div className="border-white rounded-full shadow-lg bg-gradient-to-r from-orange-400 to-pink-500 p-9 border-6">
-                        <FaPlay className="text-xl text-white" />
+                    <div className="border-white rounded-full shadow-lg bg-gradient-to-r from-orange-400 to-pink-500 p-6 sm:p-7 md:p-8 lg:p-9 border-4">
+                        <FaPlay className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white" />
                     </div>
                 </motion.a>
+
             </motion.div>
 
             {/* Right: Content */}
             <motion.div
-                className="w-full md:w-1/2"
+                className="w-full md:w-1/2 px-8"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 100, damping: 10 }}
                 viewport={{ once: true, amount: 0.3 }}
             >
                 <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-[#04394e] leading-tight mb-4"
+                    className="text-2xl md:text-4xl font-bold text-[#04394e] leading-tight mb-4"
                     initial={{ scale: 0.5 }}
                     whileInView={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, damping: 8 }}

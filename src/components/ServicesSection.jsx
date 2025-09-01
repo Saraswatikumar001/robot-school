@@ -84,7 +84,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#6d9bad] to-[#195269] py-16 px-4">
+    <section className="bg-gradient-to-b from-[#6d9bad] to-[#195269] py-16 lg:px-4 px-10">
       <div className="max-w-7xl mx-auto">
         {/* Services cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">

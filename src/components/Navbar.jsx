@@ -165,11 +165,11 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <FaMapMarkerAlt className="text-[#F78A41]" />
-            <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India</span>
+            <a href="https://maps.app.goo.gl/JRGqzZWU73UFtnFx5" className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out cursor-pointer">AB 53/1, Prafulla Kanan West, Kestopur Kolkata -700101, West Bengal, India</a>
           </div>
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-[#F78A41]" />
-            <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">+(033) 48028513</span>
+            <a href="tel:03348028513" className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out cursor-pointer">+(033) 48028513</a>
           </div>
         </div>
 
@@ -180,7 +180,7 @@ export default function Navbar() {
             <span className="hover:text-[#FA8B41] transition-colors duration-300 ease-in-out">Sun–Fri: 8.00AM - 4.00PM | Sat: Closed</span>
           </div>
           {/* Social Icons */}
-          <div className="flex gap-3 text-[#04394E]">
+          <div className="flex lg:flex-row flex-col gap-3 text-[#04394E]">
             <a
               href="https://www.facebook.com/fusiontechlab"
               target="_blank"
@@ -285,7 +285,7 @@ export default function Navbar() {
 
           {/* Enroll Now Button (Desktop) */}
           <motion.a
-            href="#"
+            href="/"
             className="hidden md:inline-block bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold shadow-lg border-2 border-transparent hover:border-white"
             animate={{
               scale: [1, 1.05, 1],

@@ -10,6 +10,7 @@ import ContactPage from "./pages/ContactPage";
 import Pricing from "./pages/Pricing";
 import Schedule from "./pages/Schedule";
 import FAQContactSection from "./components/FAQContactSection";
+import EnrollNow from "./components/EnrollNow";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule" element={<Schedule />} />  
-          <Route path="/faq" element={<FAQContactSection />} />              
+          <Route path="/faq" element={<FAQContactSection />} />  
+          <Route path="/enroll" element={<EnrollNow />} />                    
         </Routes>
         <Footer />
       </Router>

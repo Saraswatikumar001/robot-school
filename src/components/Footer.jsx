@@ -10,7 +10,7 @@ export default function Footer() {
             <div>                
                 <motion.img
                     src={SingleImg}
-                    className="absolute left-[75%] top-[-20%] w-[220px] h-[180px] z-10"
+                    className="absolute lg:left-[75%] left-[-12%] lg:top-[-20%] top-[-7%]  w-[220px] h-[180px] z-10"
                     animate={{
                         y: [0, -15, 0],       // Floating up and down
                         rotate: [0, 5, -5, 0], // Gentle rotation

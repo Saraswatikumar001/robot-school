@@ -47,7 +47,7 @@ const features = [
 const FeaturesSection = () => {
   return (
     <section className="bg-gradient-to-b from-blue-50 to-purple-100 py-10">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="max-w-7xl mx-auto lg:px-4 px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         {features.map((feature, index) => (
           <div key={index} className="p-4">
             <motion.img
@@ -69,6 +69,6 @@ const FeaturesSection = () => {
       </div>
     </section>
   );
-};
+}; 
 
 export default FeaturesSection;

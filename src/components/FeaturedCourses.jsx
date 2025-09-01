@@ -42,7 +42,7 @@ const courses = [
 
 const FeaturedCourses = () => {
     return (
-        <section className="bg-[#f2f4ff] py-12">
+        <section className="bg-[#f2f4ff] py-12 px-10">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-5xl font-bold text-center mb-10 text-[#04394e]">Featured Courses</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -52,7 +52,7 @@ const FeaturedCourses = () => {
                             className="bg-white rounded-lg shadow-lg overflow-hidden relative"
                         >
                             {/* Price Tag */}
-                            <div className="absolute left-[-1%] top-[33%] bg-[#04394e] text-white  border-4 border-white font-bold px-3 py-1 rounded-full">
+                            <div className="absolute left-[-1%] top-[33%] bg-[#04394e] text-white  border-4 border-white font-bold px-3 py-1 lg:rounded-full">
                                 {course.price}
                             </div>
 
