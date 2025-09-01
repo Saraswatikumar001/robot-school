@@ -12,7 +12,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-8 pb-20">
+    <div className="bg-gray-50 min-h-screen pt-8 pb-20 lg:px-0 px-5">
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 mb-6">
         <nav className="text-sm text-gray-700">
