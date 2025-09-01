@@ -160,7 +160,7 @@ export default function Navbar() {
   return (
     <header className="w-full">
       {/* Top Bar */}
-      <div className="bg-gray-100 text-sm text-gray-600 py-2 px-6 flex justify-between items-center">
+      <div className="bg-gray-100 text-sm text-gray-600 py-2 px-8 flex justify-between items-center">
         {/* Left Info */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
