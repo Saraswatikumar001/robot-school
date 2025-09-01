@@ -8,6 +8,7 @@ import ProgramOffering from '../components/ProgramOffering '
 import TestimonialSection from '../components/TestimonialSection;'
 import FeaturedCourses from '../components/FeaturedCourses'
 import FAQContactSection from '../components/FAQContactSection'
+import EnrollNow from '../components/EnrollNow'
 
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
             <TestimonialSection />
             <FeaturedCourses />
             <FAQContactSection />
-            
+            <EnrollNow />
         </>
     )
 }

@@ -108,7 +108,7 @@ export default function Navbar() {
 
           {/* Enroll Now Button (Desktop) */}
           <motion.a
-            href="/"
+            href="/enroll"
             className="hidden md:inline-block bg-[#fa8b41] text-white py-2 px-6 rounded-full font-semibold shadow-lg border-2 border-transparent hover:border-white"
             animate={{ scale: [1, 1.05, 1], opacity: [1, 0.85, 1] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
