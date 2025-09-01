@@ -23,7 +23,7 @@ const caseStudies = [
     subtitle: "Community Engagement",
     summary:
       "Our mobile robotics labs reached 10 schools across Delhi over a 2-month period.",
-    img: "https://c9.shauryasoft.com/media/bny-contentPageBg_103_32.jpg",
+    img: "https://media.istockphoto.com/id/911030824/photo/studying-robotic-arm.jpg?s=612x612&w=0&k=20&c=coxfT2Cd4ozH8E62CYIdOP_SIgQ1XIcshFCzL6pyDLQ=",
   },
   {
     title: "Mobile Lab Tour",
