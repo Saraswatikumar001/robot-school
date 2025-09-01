@@ -43,7 +43,7 @@ const testimonials = [
 
 const TestimonialSection = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 600,
     autoplay: true,
