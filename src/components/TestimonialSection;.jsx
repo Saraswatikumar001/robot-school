@@ -53,28 +53,20 @@ const TestimonialSection = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1280, // large screens (lg)
-        settings: {
-          slidesToShow: 2
-        }
+        breakpoint: 480, // <= 480px
+        settings: { slidesToShow: 1 }
       },
       {
-        breakpoint: 1024, // tablets
-        settings: {
-          slidesToShow: 1
-        }
+        breakpoint: 768, // <= 768px
+        settings: { slidesToShow: 1 }
       },
       {
-        breakpoint: 768, // mobile
-        settings: {
-          slidesToShow: 1
-        }
+        breakpoint: 1024, // <= 1024px
+        settings: { slidesToShow: 1 }
       },
       {
-        breakpoint: 480, // small mobile
-        settings: {
-          slidesToShow: 1
-        }
+        breakpoint: 1280, // <= 1280px
+        settings: { slidesToShow: 2 }
       }
     ]
   };

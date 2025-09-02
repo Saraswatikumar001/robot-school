@@ -1,0 +1,9 @@
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.testimonial-card {
+  width: 100%;
+  max-width: 350px; /* optional */
+}
