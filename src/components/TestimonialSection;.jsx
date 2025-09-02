@@ -52,23 +52,24 @@ const TestimonialSection = () => {
     slidesToShow: 3, // default for large screens
     slidesToScroll: 1,
     responsive: [
-    {
-      breakpoint: 1280, // <= 1280px
-      settings: { slidesToShow: 2 }
-    },
-    {
-      breakpoint: 1024, // <= 1024px
-      settings: { slidesToShow: 1 }
-    },
-    {
-      breakpoint: 768, // <= 768px
-      settings: { slidesToShow: 1 }
-    },
-    {
-      breakpoint: 480, // <= 480px
-      settings: { slidesToShow: 1 }
-    }
-  ]
+      {
+        breakpoint: 1280,
+        settings: { slidesToShow: 2, slidesToScroll: 1 }
+      },
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+      }
+    ]
+
   };
 
   return (
