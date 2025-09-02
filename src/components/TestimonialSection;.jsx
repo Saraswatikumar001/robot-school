@@ -74,10 +74,7 @@ const TestimonialSection = () => {
         slidesToShow: 1,
         slidesToScroll: 1
       }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+    }    
   ]
   };
 
@@ -97,7 +94,7 @@ const TestimonialSection = () => {
           <div>
             <p className="text-orange-500 uppercase font-semibold">Testimonial</p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#04394e]">
-              Authentic Testimonials from Parents
+              Authentic Testimonials from shruti
             </h2>
           </div>
           <div className="mt-4 md:mt-0 text-right">
