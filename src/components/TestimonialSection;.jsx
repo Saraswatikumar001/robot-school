@@ -2,28 +2,34 @@ import React from "react";
 import Slider from "react-slick";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 const testimonials = [
+   {
+    name: "John Doe",
+    role: "Teacher",
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
+  },
+   {
+    name: "John Doe",
+    role: "Teacher",
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
+  },
   {
     name: "John Doe",
     role: "Teacher",
-    image: "https://via.placeholder.com/150",
-    text: "Kids Robotic School has revolutionized STEM education..."
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
   },
-  {
-    name: "Jane Smith",
-    role: "Parent",
-    image: "https://via.placeholder.com/150",
-    text: "The program inspired creativity and critical thinking."
+   {
+    name: "John Doe",
+    role: "Teacher",
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
   },
-  {
-    name: "Michael Brown",
-    role: "Student",
-    image: "https://via.placeholder.com/150",
-    text: "I love learning robotics and coding in a fun way!"
-  }
+   {
+    name: "John Doe",
+    role: "Teacher",
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
+  },
 ];
 
 const TestimonialSlider = () => {
