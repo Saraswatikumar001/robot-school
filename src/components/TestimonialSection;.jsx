@@ -49,24 +49,32 @@ const TestimonialSection = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
-    slidesToShow: 3, // default for desktop
+    slidesToShow: 3, // default for large screens
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1280, // <= 1280px
-        settings: { slidesToShow: 2, slidesToScroll: 1 }
+        breakpoint: 1280, // large screens (lg)
+        settings: {
+          slidesToShow: 2
+        }
       },
       {
-        breakpoint: 1024, // <= 1024px
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+        breakpoint: 1024, // tablets
+        settings: {
+          slidesToShow: 1
+        }
       },
       {
-        breakpoint: 768, // <= 768px
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+        breakpoint: 768, // mobile
+        settings: {
+          slidesToShow: 1
+        }
       },
       {
-        breakpoint: 480, // <= 480px
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 1 }
+        breakpoint: 480, // small mobile
+        settings: {
+          slidesToShow: 1
+        }
       }
     ]
   };
@@ -103,21 +111,22 @@ const TestimonialSection = () => {
         </div>
 
         {/* Slider */}
-        <div className="w-full px-2 sm:px-4">
-          <Slider {...settings}>
-            {testimonials.map((t, i) => (
-              <div key={i} className="p-2">
-                <div className="bg-white rounded-2xl shadow-md p-6 text-center">
-                  <img src={t.image} alt={t.name} className="w-20 h-20 mx-auto rounded-full mb-4" />
-                  <p className="text-gray-700 mb-4">{t.text}</p>
-                  <h4 className="font-bold">{t.name}</h4>
-                  <p className="text-orange-500 uppercase">{t.role}</p>
-                </div>
+        <Slider {...settings}>
+          {testimonials.map((t, idx) => (
+            <div key={idx} className="px-4">
+              <div className="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+                />
+                <p className="text-gray-600 text-sm mb-4">{t.text}</p>
+                <h3 className="font-semibold text-gray-900">{t.name}</h3>
+                <p className="text-orange-500 uppercase text-sm">{t.role}</p>
               </div>
-            ))}
-          </Slider>
-        </div>
-
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );
