@@ -78,7 +78,7 @@ const WhoWeAreSection = () => {
         <motion.div
           className="
             absolute 
-            top-2 right-2       /* mobile */
+            top-2 -right-6       /* mobile */
             sm:top-4 sm:right-6
             md:top-6 md:right-10
             lg:top-10 lg:right-14
