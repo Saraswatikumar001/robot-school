@@ -38,91 +38,81 @@ const testimonials = [
 
 
 const TestimonialSection = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    arrows: false,
-    slidesToShow: 3, // desktop
-    slidesToScroll: 1,
-    responsive: [
-      {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    ]
-  };
-  return (
-    <section
-      className="py-16"
-      style={{
-        backgroundImage:
-          "linear-gradient(#f9fafb 1px, transparent 1px), linear-gradient(90deg, #f9fafb 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-        backgroundColor: "#ffffff"
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        {/* Heading */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-8">
-          <div>
-            <p className="text-orange-500 uppercase font-semibold">Testimonial</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#04394e]">
-              Authentic Testimonials from shruti
-            </h2>
-          </div>
-          <div className="mt-4 md:mt-0 text-right">
-            <p className="text-lg font-medium text-gray-900">Excellent</p>
-            <div className="flex items-center justify-end gap-1 text-orange-400">
-              <FaStar /><FaStar /><FaStar /><FaStar /><FaStarHalfAlt />
-              <span className="ml-2 text-gray-900 font-bold">4.5 out of 5</span>
-            </div>
-            <p className="text-sm text-gray-500">
-              Based on <span className="text-orange-500 font-semibold">10,098</span> reviews
-            </p>
-          </div>
-        </div>
-        <Slider {...settings}>
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="px-4">
-              <div className="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
-                />
-                <p className="text-gray-600 text-sm mb-4">{t.text}</p>
-                <h3 className="font-semibold text-gray-900">{t.name}</h3>
-                <p className="text-orange-500 uppercase text-sm">{t.role}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
+  const [current, setCurrent] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(3);
 
+  // ✅ Handle responsiveness
+  const updateSlidesToShow = () => {
+    if (window.innerWidth < 640) setSlidesToShow(1); // mobile
+    else if (window.innerWidth < 1024) setSlidesToShow(2); // tablet
+    else setSlidesToShow(3); // desktop
+  };
+
+  useEffect(() => {
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
+    return () => window.removeEventListener("resize", updateSlidesToShow);
+  }, []);
+
+  // ✅ Next & Prev
+  const nextSlide = () => {
+    if (current < testimonials.length - slidesToShow) {
+      setCurrent(current + 1);
+    } else {
+      setCurrent(0); // loop back
+    }
+  };
+
+  const prevSlide = () => {
+    if (current > 0) {
+      setCurrent(current - 1);
+    } else {
+      setCurrent(testimonials.length - slidesToShow);
+    }
+  };
+
+  return (
+    <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
+      {/* Slider Wrapper */}
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${current * (100 / slidesToShow)}%)` }}
+      >
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className="flex-shrink-0 px-4"
+            style={{ width: `${100 / slidesToShow}%` }}
+          >
+            <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
+              <img
+                src={t.image}
+                alt={t.name}
+                className="w-20 h-20 mx-auto rounded-full mb-4"
+              />
+              <p className="text-gray-700 mb-4 italic">“{t.text}”</p>
+              <h3 className="font-bold">{t.name}</h3>
+              <p className="text-orange-500 uppercase text-sm">{t.role}</p>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+
+      {/* Prev & Next Buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+      >
+        ◀
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+      >
+        ▶
+      </button>
+    </div>
   );
-}
+};
 
 export default TestimonialSection;
