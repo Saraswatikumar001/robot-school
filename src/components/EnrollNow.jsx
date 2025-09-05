@@ -12,14 +12,14 @@ const EnrollNow = () => {
     <section className="bg-gray-50 py-12 px-4 min-h-screen flex items-center justify-center">
       <div className="max-w-3xl w-full">
         {submitted ? (
-          // ✅ Show ONLY the success message
+
           <div className="bg-green-100 border border-green-400 text-green-700 px-8 py-12 rounded-2xl text-center text-2xl font-bold shadow-lg">
-            🎉 Thank you for enrolling!  
+            🎉 Thank you for enrolling!
             <br />
             We will get back to you soon.
           </div>
         ) : (
-          // ✅ Show the form before submission
+
           <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#04394E] mb-2 text-center">
               Enroll Now
