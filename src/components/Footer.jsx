@@ -5,9 +5,21 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import SingleImg from "../assets/img/robot-single.png";
 
 export default function Footer() {
+    const [email, setEmail] = React.useState("");
+    const [messsage, setMessage] = React.useState("");
+
+    const handleSubcribe = (e) => {
+        e.preventDefault();
+        if (email.trim() === "") {
+            setMessage("⚠️ Please enter a valid email!");
+        }
+        else{
+            setMessage("🎉 Thank you for subscribing!");
+        }
+    }
     return (
         <footer className="bg-[#04394e] text-white relative">
-            <div>                
+            <div>
                 <motion.img
                     src={SingleImg}
                     className="absolute lg:left-[75%] left-[-12%] lg:top-[-20%] top-[-7%]  w-[220px] h-[180px] z-10"
@@ -49,7 +61,7 @@ export default function Footer() {
                             </a>
                             <a href="https://www.instagram.com/fusiontechlab/" className="hover:text-[#fa8b41]">
                                 <FaInstagram />
-                            </a>                        
+                            </a>
                             <a href="https://youtube.com/@fusiontechlab?si=AbJpYkdl1SeXHpkb" className="hover:text-[#fa8b41]">
                                 <FaYoutube />
                             </a>
@@ -64,7 +76,7 @@ export default function Footer() {
                         {/* Email */}
                         <div>
                             <p className="font-bold hover:text-[#ffbe92] transition-colors duration-300 ease-in-out">Email Address</p>
-                            <a href="mailto:ceo@fusiontechlab.com" className="text-[#fa8b41]">in@fusiontechlab.com</a>
+                            <a href="mailto:in@fusiontechlab.com" className="text-[#fa8b41]">in@fusiontechlab.com</a>
                         </div>
 
                         {/* Address */}
