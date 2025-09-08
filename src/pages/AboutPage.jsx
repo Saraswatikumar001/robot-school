@@ -79,30 +79,22 @@ const settings = {
     arrows: false,
     slidesToShow: 3, // default for large screens
     slidesToScroll: 1,
-    responsive: [
+     responsive: [
         {
-            breakpoint: 1280, // large screens (lg)
-            settings: {
-                slidesToShow: 2
-            }
+            breakpoint: 1280, // lg screens
+            settings: { slidesToShow: 2 }
         },
         {
             breakpoint: 1024, // tablets
-            settings: {
-                slidesToShow: 1
-            }
+            settings: { slidesToShow: 2 }
         },
         {
-            breakpoint: 768, // mobile
-            settings: {
-                slidesToShow: 1
-            }
+            breakpoint: 768, // small tablets
+            settings: { slidesToShow: 1 }
         },
         {
-            breakpoint: 480, // small mobile
-            settings: {
-                slidesToShow: 1
-            }
+            breakpoint: 480, // mobile
+            settings: { slidesToShow: 1 }
         }
     ]
 };
