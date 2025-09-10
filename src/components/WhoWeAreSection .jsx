@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import kidsImage from "../assets/img/robot-1.jpg";
+import WhoWe from "../assets/img/who-we.jpg";
 
 const WhoWeAreSection = () => {
   return (
@@ -31,9 +32,9 @@ const WhoWeAreSection = () => {
         {/* Founder Info */}
         <div className="flex items-center space-x-4 mt-6 border-t pt-4">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiMHCDMtqM_45FAek0yHA1bNk79rzvO1C1Pg&s"
+            src={WhoWe}
             alt="Founder"
-            className="w-12 h-12 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover"
           />
           <div>
             <p className="font-semibold text-gray-900">John Doe</p>
@@ -47,11 +48,11 @@ const WhoWeAreSection = () => {
       {/* Right Content */}
       <div className="relative md:w-1/2 flex justify-center">
         {/* Floating Image */}
-        <motion.img
+        <img
           src={kidsImage}
           alt="Kids with Robot"
           className="
-            rounded-full shadow-xl 
+            rounded-full shadow-xl object-cover
             w-44 h-44        /* mobile */
             sm:w-60 sm:h-60  /* small tablets */
             md:w-72 md:h-72  /* medium screens */
