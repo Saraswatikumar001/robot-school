@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const EnrollNow = () => {
   const [submitted, setSubmitted] = useState(false);
 
