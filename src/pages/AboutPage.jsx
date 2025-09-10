@@ -71,7 +71,7 @@ const members = [
 ];
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 600,
   autoplay: true,
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Robo Crew Section (kept same) */}
-                <section className="mt-16">
+                <section className="my-16">
                     <h3 className="text-3xl font-bold text-center text-[#04394e] mb-8">
                         Meet the Robo Crew
                     </h3>
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Call to Action */}
-                <section className="mt-20 rounded-3xl bg-white p-10 shadow-lg">
+                {/* <section className="mt-20 rounded-3xl bg-white p-10 shadow-lg">
                     <div className="grid items-center gap-8 md:grid-cols-2">
                         <div>
                             <h3 className="text-3xl font-bold text-[#04394e]">
@@ -226,7 +226,7 @@ export default function AboutPage() {
                             />
                         </motion.div>
                     </div>
-                </section>
+                </section> */}
             </div>
         </div>
     );

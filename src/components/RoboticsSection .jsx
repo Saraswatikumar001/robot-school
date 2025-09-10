@@ -56,7 +56,6 @@ const RoboticsSection = () => {
                         <FaPlay className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white" />
                     </div>
                 </motion.a>
-
             </motion.div>
 
             {/* Right: Content */}

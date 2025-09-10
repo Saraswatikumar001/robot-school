@@ -59,7 +59,7 @@ const About = () => {
     ];
 
     return (
-        <section className="mb-10 bg-gray-100">
+        <section className="bg-gray-100">
             <Slider {...settings}>
                 {slides.map((slide, i) => (
                     <motion.div

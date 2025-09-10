@@ -76,20 +76,18 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-[#04394E] py-3">
+      <nav className="bg-[#04394E] py-2">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-3"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          <div
+            className="flex items-center gap-3"       
           >
             <img
               src={logo}
               alt="Robotics School Logo"
-              className="h-14 w-14 rounded-full border-4 border-[#fa8b41] shadow-lg"
+              className="h-20 w-20 rounded-full border-4 border-[#fa8b41] shadow-lg"
             />
-          </motion.div>
+          </div>
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-6 bg-white rounded-full px-6 py-3 shadow-md">

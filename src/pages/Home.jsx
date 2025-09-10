@@ -14,8 +14,7 @@ import EnrollNow from '../components/EnrollNow'
 const Home = () => {
     return (
         <>
-            <About />
-            <RoboticsSection />
+            <About />           
             <ServicesSection />
             <WhoWeAreSection />
             <FeaturesSection />

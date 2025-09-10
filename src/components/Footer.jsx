@@ -94,8 +94,8 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         {/* Logo + About */}
                         <div>
-                            <h2 className="text-2xl font-bold flex items-center gap-2 hover:text-[#FA8B41]">
-                                🤖 RoboTech
+                            <h2 className="text-3xl font-bold flex items-center gap-2 hover:text-[#FA8B41]">
+                                 Robotics School
                             </h2>
                             <p className="mt-3 text-sm text-blue-100">
                                 We offer structured and interesting robotics courses for
