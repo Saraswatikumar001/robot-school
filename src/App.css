@@ -5,3 +5,22 @@
 
 
 
+/* Fix for slick slider with Tailwind */
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-list {
+  padding: 10px 0;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
