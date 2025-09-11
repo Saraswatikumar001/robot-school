@@ -6,7 +6,8 @@ import heroImg2 from '../assets/img/robot-1.jpg';
 import heroImg3 from '../assets/img/robot-2.jpg';
 import heroImg4 from '../assets/img/robot-3.jpg';
 import heroImg5 from '../assets/img/robot-5.jpg';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const About = () => {
     // Slick settings
@@ -25,7 +26,7 @@ const About = () => {
     // Slides data (text + image together)
     const slides = [
         {
-          
+
             title: "Robotics for Your Kids",
             desc: "Get your children ready for the future.",
             btn: "Our Classes",
@@ -47,15 +48,15 @@ const About = () => {
             title: "Hands-On Experience",
             desc: "Kids learn by doing, building real robots with guidance.",
             btn: "Explore More",
-            img: heroImg4 
+            img: heroImg4
         },
         {
             title: "Creative Problem Solving",
             desc: "Robotics teaches logical thinking and teamwork.",
             btn: "Enroll Now",
-            img: heroImg5 
+            img: heroImg5
         },
-        
+
     ];
 
     return (
@@ -70,10 +71,10 @@ const About = () => {
                     >
                         <div className="flex flex-col-reverse items-center px-12 py-20 mx-auto max-w-7xl lg:flex-row">
                             {/* Left Text */}
-                            <div className="w-full text-center lg:w-1/2 lg:text-left"> 
-                             <p className="mb-3 text-lg font-bold text-center text-black uppercase transition-transform duration-300 rounded-full w-65  animate-fadeInUp hover:scale-105">
+                            <div className="w-full text-center lg:w-1/2 lg:text-left">
+                                <p className="mb-3 text-lg font-bold text-center text-black uppercase transition-transform duration-300 rounded-full w-65  animate-fadeInUp hover:scale-105">
                                     Join Us
-                                </p>                              
+                                </p>
                                 <h1 className="text-4xl sm:text-5xl font-bold text-[#04394e] leading-tight">
                                     {slide.title}<span className="text-[#04394e]">.</span>
                                 </h1>
@@ -90,9 +91,15 @@ const About = () => {
                             {/* Right Image */}
                             <div className="w-full lg:w-1/2 flex justify-center">
                                 <div className="w-[90%] rounded-lg overflow-hidden shadow-lg">
-                                    <img
+                                    {/* <LazyLoadComponent
                                         src={slide.img}
                                         alt="Robotics kids"
+                                        className="object-cover w-full h-[350px] rounded-lg"
+                                    /> */}
+                                    <LazyLoadImage
+                                        alt="Optimized"
+                                        effect="blur"
+                                        src={slide.img}
                                         className="object-cover w-full h-[350px] rounded-lg"
                                     />
                                 </div>

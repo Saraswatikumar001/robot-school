@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 function Breadcrumbs({ items = [] }) {
     return (
         <nav className="w-full" aria-label="Breadcrumb">
@@ -71,20 +72,20 @@ const members = [
 ];
 
 const settings = {
-  dots: false,
-  infinite: true,
-  speed: 600,
-  autoplay: true,
-  autoplaySpeed: 2500,
-  arrows: false,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    { breakpoint: 1280, settings: { slidesToShow: 2 } },
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 768, settings: { slidesToShow: 1 } },
-    { breakpoint: 480, settings: { slidesToShow: 1 } }
-  ]
+    dots: false,
+    infinite: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        { breakpoint: 1280, settings: { slidesToShow: 2 } },
+        { breakpoint: 1024, settings: { slidesToShow: 2 } },
+        { breakpoint: 768, settings: { slidesToShow: 1 } },
+        { breakpoint: 480, settings: { slidesToShow: 1 } }
+    ]
 };
 
 export default function AboutPage() {
@@ -126,9 +127,10 @@ export default function AboutPage() {
                         transition={{ duration: 0.6 }}
                         className="relative flex justify-center"
                     >
-                        <img
+                        <LazyLoadImage
                             src="https://static.vecteezy.com/system/resources/previews/030/492/783/large_2x/cute-robot-working-on-a-laptop-3d-render-technology-concept-ai-generated-free-photo.jpg"
                             alt="Cute Robot Illustration"
+                            effect="blur"
                             className="w-72 md:w-96 rounded-lg shadow-lg"
                         />
                     </motion.div>
@@ -171,7 +173,7 @@ export default function AboutPage() {
                         {members.map((member, index) => (
                             <div key={index} className="px-3">
                                 <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
-                                    <img
+                                    <LazyLoadImage
                                         src={member.img}
                                         alt={member.name}
                                         className="h-52 w-full object-cover"
