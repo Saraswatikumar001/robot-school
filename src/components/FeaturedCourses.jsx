@@ -82,7 +82,7 @@ const FeaturedCourses = () => {
           >
             {courses.map((course, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden relative me-3 h-full flex flex-col">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden relative lg:me-3 h-full flex flex-col">
                   {/* Price Tag */}
                   <div className="absolute left-[-1%] top-[33%] bg-[#04394e] text-white border-4 border-white font-bold px-3 py-1 lg:rounded-full">
                     {course.price}
@@ -97,7 +97,7 @@ const FeaturedCourses = () => {
 
                   {/* Content */}
                   <div className="p-5 flex flex-col flex-grow">
-                    <p className="text-xs font-bold text-orange-500 tracking-widest uppercase mb-2">
+                    <p className="lg:pt-0 pt-5 text-xs font-bold text-orange-500 tracking-widest uppercase mb-2">
                       {course.category}
                     </p>
                     <h3 className="font-semibold text-lg mb-2">
