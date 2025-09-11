@@ -139,13 +139,12 @@ import React from "react";
 import Slider from "react-slick";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-// Import optimized images from public folder
-// Example: put images inside /public/testimonials/
+// Testimonials data
 const testimonials = [
   {
     name: "John Doe",
     role: "Teacher",
-    image: "/testimonials/testimonial1.jpg", // optimized image file
+    image: "/testimonials/testimonial1.jpg",
     text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
   },
   {
@@ -155,50 +154,52 @@ const testimonials = [
     text: "The robotics program has given our students hands-on exposure to real-world problem-solving. We’ve seen improvements in teamwork, confidence, and innovation among our learners."
   },
   {
-    name: "John Doe",
+    name: "Michael Lee",
+    role: "Parent",
+    image: "/testimonials/testimonial3.jpg",
+    text: "My child absolutely loves the robotics classes! It’s amazing to see them learn coding and problem-solving at such an early age."
+  },
+  {
+    name: "Sophia Brown",
     role: "Teacher",
-    image: "/testimonials/testimonial1.jpg", // optimized image file
-    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
-  },
-  {
-    name: "Jane Smith",
-    role: "Principal",
-    image: "/testimonials/testimonial2.jpg",
-    text: "The robotics program has given our students hands-on exposure to real-world problem-solving. We’ve seen improvements in teamwork, confidence, and innovation among our learners."
-  },
-  {
-    name: "John Doe",
-    role: "Teacher",
-    image: "/testimonials/testimonial1.jpg", // optimized image file
-    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
-  },
-  {
-    name: "Jane Smith",
-    role: "Principal",
-    image: "/testimonials/testimonial2.jpg",
-    text: "The robotics program has given our students hands-on exposure to real-world problem-solving. We’ve seen improvements in teamwork, confidence, and innovation among our learners."
-  },
+    image: "/testimonials/testimonial4.jpg",
+    text: "The hands-on activities really engage students. They learn by doing, which is the best way to grasp STEM concepts."
+  }
 ];
 
 const TestimonialsSlider = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
     speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024, // tablets and small laptops
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 640, // mobile devices
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-4">
+    <div className="max-w-6xl mx-auto py-10 px-4">
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center"
+            className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center mx-2"
           >
             <img
               src={testimonial.image}
@@ -206,7 +207,7 @@ const TestimonialsSlider = () => {
               className="w-20 h-20 rounded-full object-cover mb-4"
               loading="lazy"
             />
-            <h3 className="text-xl font-semibold">{testimonial.name}</h3>
+            <h3 className="text-lg font-semibold">{testimonial.name}</h3>
             <p className="text-sm text-gray-500 mb-3">{testimonial.role}</p>
             <div className="flex justify-center text-yellow-500 mb-3">
               <FaStar />
@@ -215,7 +216,7 @@ const TestimonialsSlider = () => {
               <FaStar />
               <FaStarHalfAlt />
             </div>
-            <p className="text-gray-700">{testimonial.text}</p>
+            <p className="text-gray-700 text-sm">{testimonial.text}</p>
           </div>
         ))}
       </Slider>
