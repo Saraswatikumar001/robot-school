@@ -90,17 +90,12 @@ const About = () => {
 
                             {/* Right Image */}
                             <div className="w-full lg:w-1/2 flex justify-center">
-                                <div className="w-[90%] rounded-lg overflow-hidden shadow-lg">
-                                    {/* <LazyLoadComponent
-                                        src={slide.img}
-                                        alt="Robotics kids"
-                                        className="object-cover w-full h-[350px] rounded-lg"
-                                    /> */}
+                                <div className="w-[100%] aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
                                     <LazyLoadImage
-                                        alt="Optimized"
+                                        alt={slide.title}
                                         effect="blur"
                                         src={slide.img}
-                                        className="object-cover w-full h-[350px] rounded-lg"
+                                        className="object-cover w-full h-full rounded-lg"
                                     />
                                 </div>
                             </div>

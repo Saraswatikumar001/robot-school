@@ -70,7 +70,7 @@ const ProgramOffering = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#173c5c] to-[#44a5f9] py-16 relative overflow-hidden">
+    <section className="bg-[#04394E] relative overflow-hidden py-10">
       <div className="text-center mb-12 px-5">
         <p className="text-[#e8792f] uppercase tracking-wider text-sm font-semibold">
           Program Offering
@@ -88,11 +88,11 @@ const ProgramOffering = () => {
       >
         {programs.map((program, idx) => (
           <motion.div
-            key={`${program.title}-${idx}`} 
+            key={`${program.title}-${idx}`}
             variants={cardVariants}
             whileHover={{
               scale: 1.08,
-              rotate: [0, 1.5, -1.5, 0], 
+              rotate: [0, 1.5, -1.5, 0],
               transition: { duration: 0.4 },
             }}
             className="bg-white rounded-xl shadow-lg p-6 text-center"
