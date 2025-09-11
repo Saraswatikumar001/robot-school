@@ -62,7 +62,7 @@ const courses = [
 const FeaturedCourses = () => {
   return (
     <section className="bg-[#f2f4ff] py-12 px-10">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto lg:px-4">
         <h2 className="text-5xl font-bold text-center mb-10 text-[#04394e]">
           Featured Courses
         </h2>
@@ -71,7 +71,7 @@ const FeaturedCourses = () => {
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={30}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            // autoplay={{ delay: 3000, disableOnInteraction: false }}
             
             // pagination={{ clickable: true }}
             breakpoints={{
