@@ -135,17 +135,15 @@
 
 // export default TestimonialSection;
 
-import React from "react";
-import Slider from "react-slick";
+import React, { useState, useEffect } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-// Testimonials data
 const testimonials = [
   {
     name: "John Doe",
     role: "Teacher",
     image: "/testimonials/testimonial1.jpg",
-    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology. The instructors are dedicated and knowledgeable, making learning a joyful experience."
+    text: "Kids Robotic School has revolutionized STEM education at our school. The program has inspired our students to think critically and creatively while fostering a love for technology."
   },
   {
     name: "Jane Smith",
@@ -168,58 +166,88 @@ const testimonials = [
 ];
 
 const TestimonialsSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024, // tablets and small laptops
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 640, // mobile devices
-        settings: {
-          slidesToShow: 1
-        }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  // Detect screen size & adjust slides
+  useEffect(() => {
+    const updateSlides = () => {
+      if (window.innerWidth < 640) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
       }
-    ]
-  };
+    };
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
+  // Auto-slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev + 1 >= testimonials.length ? 0 : prev + 1
+      );
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4">
-      <Slider {...settings}>
+    <div className="relative max-w-6xl mx-auto px-4 py-10 overflow-hidden">
+      {/* Slider wrapper */}
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{
+          transform: `translateX(-${(currentIndex * 100) / slidesToShow}%)`,
+          width: `${(testimonials.length * 100) / slidesToShow}%`
+        }}
+      >
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center mx-2"
+            className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
           >
-            <img
-              src={testimonial.image}
-              alt={`${testimonial.name} - ${testimonial.role}`}
-              className="w-20 h-20 rounded-full object-cover mb-4"
-              loading="lazy"
-            />
-            <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-            <p className="text-sm text-gray-500 mb-3">{testimonial.role}</p>
-            <div className="flex justify-center text-yellow-500 mb-3">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
+            <div className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center h-full">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-20 h-20 rounded-full object-cover mb-4"
+                loading="lazy"
+              />
+              <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+              <p className="text-sm text-gray-500 mb-3">{testimonial.role}</p>
+              <div className="flex justify-center text-yellow-500 mb-3">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+              </div>
+              <p className="text-gray-700 text-sm">{testimonial.text}</p>
             </div>
-            <p className="text-gray-700 text-sm">{testimonial.text}</p>
           </div>
         ))}
-      </Slider>
+      </div>
+
+      {/* Dots navigation */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {Array.from({ length: Math.ceil(testimonials.length / slidesToShow) }).map(
+          (_, idx) => (
+            <button
+              key={idx}
+              className={`w-3 h-3 rounded-full ${
+                idx === Math.floor(currentIndex / slidesToShow)
+                  ? "bg-orange-500"
+                  : "bg-gray-300"
+              }`}
+              onClick={() => setCurrentIndex(idx * slidesToShow)}
+            />
+          )
+        )}
+      </div>
     </div>
   );
 };
