@@ -22,7 +22,7 @@ const Home = () => {
             <TestimonialSection />
             <FeaturedCourses />
             <FAQContactSection />
-            <EnrollNow />
+           
         </>
     )
 }
